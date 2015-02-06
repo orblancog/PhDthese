@@ -1,0 +1,182 @@
+\documentclass[logos,parttoc,mainlanguage=english,morelanguage=french]{orsay-thesis}
+%Text encoding and fonts
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage{hyperref}
+
+%########################################################################
+% Title page
+%########################################################################
+
+%Thesis author
+\author{Oscar Roberto \textsc{BLANCO GARCÍA}}
+
+%Title for main language (french)
+\title{Beam dynamics in the final focus of the CLIC future linear collider project}
+%Titles for other languages
+\title[english]{Dynamique du faisceau dans las section finale de focalisation du futur collissionneur linèaire}
+% \title[german]{My German thesis title}
+% \title[italian]{My Italian thesis title}
+
+%Keywords for main language (french)
+\keywords{Some keywords}
+%Keywords for other languages languages
+\keywords[english]{Blabla, blabla, blabla, blabla, blabla, blabla, blabla}
+\keywords[german]{Blabla, blabla, blabla, blabla, blabla, blabla, blabla}
+\keywords[italian]{Blabla, blabla, blabla, blabla, blabla, blabla, blabla}
+
+%Order number of the thesis
+\ordernumber{1234}
+
+%Date of defense
+\date{xx Xxxxxxxxx xxxx}
+
+%You define the commission member list using \addcommissionmember (mandatory) with an optional role (eg: president, supervisor, etc...)
+\addcommissionmember{M.}{Aaaaa}{Bbbbbbbb}
+\addcommissionmember{M.}{Ccccccccc}{Dddddddddd}
+\addcommissionmember[Directeur de thèse]{M.}{Eee}{Fffff}
+\addcommissionmember{M.}{Ggggggggg}{Hhhhhhh}
+\addcommissionmember[Président du jury]{M.}{Iiii}{Jjjjjjjjjjjj}
+\addcommissionmember{M.}{Kkkkkkkkkkkk}{Llllll}
+
+%If some referees are not part of the commission, you can add them in a separate list with \addreferee (optional)
+\addreferee{M.}{Mmmmmmmm}{Nnnnnnnn}
+\addreferee{M.}{Oooooooooo}{Pppppppp}
+
+%########################################################################
+% Document start
+%########################################################################
+
+\begin{document}
+
+%Print title NOW
+\maketitle%
+
+%Disable page numbering
+\pagestyle{empty}
+
+%########################################################################
+% Multilingual abstracts
+%########################################################################
+
+% %French abstract:
+% \begin{abstract}
+% \input{theabstract}
+% \end{abstract}
+
+%Horizontal rule
+\noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
+
+%English abstract:
+\begin{abstract}[english]
+\input{theabstract}
+\end{abstract}
+
+\pagebreak
+
+% %German abstract:
+% \begin{abstract}[german]
+% \dummytext
+% \end{abstract}
+
+%Horizontal rule
+\noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
+
+% %Italian abstract:
+% \begin{abstract}[italian]
+% \dummytext
+% \end{abstract}
+
+%########################################################################
+% Acknowledgments
+%########################################################################
+
+\pagebreak\strut\newpage
+
+\section*{Remerciements}
+%Put the text vertically centered
+\input{mesremerciements}
+
+\newpage
+
+%########################################################################
+% Contents
+%########################################################################
+
+\strut\newpage
+
+\tableofcontents
+
+\newpage
+
+%########################################################################
+% Introduction
+%########################################################################
+%Enable page numbering
+\pagestyle{fancy}
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+\input{theintro}
+\subsection*{The requirements of high energy physics,The linear colliders (CLIC, ILC),The Accelerator Test Facility (ATF)}
+\addcontentsline{toc}{subsection}{The requirements of high energy physics,The linear colliders (CLIC, ILC),The Accelerator Test Facility (ATF)}
+% \subsection*{The linear colliders}
+% \addcontentsline{toc}{subsection}{}
+% \subsection*{The Accelerator Test Facility (ATF)}
+% \addcontentsline{toc}{subsection}{The Accelerator Test Facility (ATF)}
+%########################################################################
+% First part
+%########################################################################
+\part{The beam position monitors at ATF2}
+The first chapter...???
+\section{The cavity BPM theory}
+\subsection{Modes, transversal planes, sensitivity}
+\section{IP-BPM mechanical, electrical and processing system description}
+\subsection{System specifications for the ATF2 line}
+\section{The installation and test}
+The first section ... ???
+\subsection{Installation}
+\subsection{System test}
+\section{Conclusions, Results and Perspectives}
+The first subsection... ???
+%########################################################################
+% Second part
+%########################################################################
+\part{Final focus design for small beam size}
+\section{Chromaticity correction}
+\subsection{The telescopic design and the Chromaticity correction methods}
+\subsection{Chromaticity minimization in the Final Doublet (FD)}
+\section{Radiation in Bending Magnets}
+\subsection{Theory of radiation in a bending magnet}
+\subsection{Generalization for dispersive regions}
+\section{Oide effect}
+\subsection{Focusing limit (Oide effect)}
+\subsection{Mitigation on the beam size impact}
+\newpage
+%########################################################################
+% Conclusions
+%########################################################################
+\part{Conclusions}
+%########################################################################
+% Bibliography
+%########################################################################
+\thispagestyle{empty}
+\strut\newpage
+\addcontentsline{toc}{section}{Références}
+\begin{thebibliography}{100}
+\labelwidth=4em
+\addtolength\leftskip{25pt}
+\setlength\labelsep{0pt}
+\addtolength\parskip{\smallskipamount}
+\bibitem[AAA]{AAA}{Blablabla, blablablabla, blablablabla, blablablabla.}
+\bibitem[BBB]{BBB}{Blablabla, blablablabla, blablablabla, blablablabla.}
+\bibitem[CCC]{CCC}{Blablabla, blablablabla, blablablabla, blablablabla.}
+\bibitem[DDD]{DDD}{Blablabla, blablablabla, blablablabla, blablablabla.}
+\bibitem[EEE]{EEE}{Blablabla, blablablabla, blablablabla, blablablabla.}
+\bibitem[FFF]{FFF}{Blablabla, blablablabla, blablablabla, blablablabla.}
+\end{thebibliography}
+
+\end{document}
+
+%########################################################################
+% Document end
+%########################################################################
