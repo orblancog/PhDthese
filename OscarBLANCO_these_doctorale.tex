@@ -1,224 +1,204 @@
-\documentclass[logos,parttoc,mainlanguage=english,morelanguage=french]{orsay-thesis}
+\documentclass[logos,hyperref,mainlanguage=english,morelanguage=french]{my-orsay-thesis}
 %Text encoding and fonts
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
-% \usepackage{hyperref}
-
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{subcaption}
+% \bibliographystyle{unsrt}
+\usepackage[hyperref=true,
+            url=false,
+            isbn=false,
+            backref=true,
+            maxcitenames=3,
+            maxbibnames=100,
+            block=none,
+            style=trad-unsrt,
+            backend=biber]{biblatex}
+\bibliography{./bib/biblio}
+\DefineBibliographyStrings{english}{%
+    backrefpage  = {see p.}, % for single page number
+    backrefpages = {see pp.} % for multiple page numbers
+}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+% activate={true,nocompatibility} - activate protrusion and expansion
+% final - enable microtype; use "draft" to disable
+% tracking=true, kerning=true, spacing=true - activate these techniques
+% factor=1100 - add 10% to the protrusion amount (default is 1000)
+% stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
+\SetTracking{encoding={*}, shape=sc}{40}
+\SetProtrusion{encoding={*},family={bch},series={*},size={6,7}}
+              {1={ ,750},2={ ,500},3={ ,500},4={ ,500},5={ ,500},
+               6={ ,500},7={ ,600},8={ ,500},9={ ,500},0={ ,500}}
+\graphicspath{{./figures/}}
 %########################################################################
 % Title page
 %########################################################################
-
-%Thesis author
 \author{Oscar Roberto \textsc{BLANCO GARCÍA}}
-
-%Title for main language (french)
 \title{Beam dynamics in the final focus of the CLIC future linear collider project}
-%Titles for other languages
 \title[english]{Dynamique du faisceau dans las section finale de focalisation du futur collissionneur linèaire}
-% \title[german]{My German thesis title}
-% \title[italian]{My Italian thesis title}
-
-%Keywords for main language (french)
 \keywords{Some keywords}
 %Keywords for other languages languages
-\keywords[english]{Blabla, blabla, blabla, blabla, blabla, blabla, blabla}
-\keywords[german]{Blabla, blabla, blabla, blabla, blabla, blabla, blabla}
-\keywords[italian]{Blabla, blabla, blabla, blabla, blabla, blabla, blabla}
-
+% \keywords[english]{Blabla, blabla, blabla, blabla, blabla, blabla, blabla}
 %Order number of the thesis
-\ordernumber{1234}
-
+\ordernumber{xxxx}
 %Date of defense
-\date{xx Xxxxxxxxx xxxx}
-
+\date{3 juillet 2015}
 %You define the commission member list using \addcommissionmember (mandatory) with an optional role (eg: president, supervisor, etc...)
-\addcommissionmember{M.}{Aaaaa}{Bbbbbbbb}
-\addcommissionmember{M.}{Ccccccccc}{Dddddddddd}
-\addcommissionmember[Directeur de thèse]{M.}{Eee}{Fffff}
-\addcommissionmember{M.}{Ggggggggg}{Hhhhhhh}
+\addcommissionmember[Directeur de thèse]{M.}{Philip}{Bambade}
+\addcommissionmember[Codirecteur de thèse]{M.}{Rogelio}{Tomás}
+\addcommissionmember{M.}{Toshiaki}{Tauchi}
 \addcommissionmember[Président du jury]{M.}{Iiii}{Jjjjjjjjjjjj}
-\addcommissionmember{M.}{Kkkkkkkkkkkk}{Llllll}
-
 %If some referees are not part of the commission, you can add them in a separate list with \addreferee (optional)
-\addreferee{M.}{Mmmmmmmm}{Nnnnnnnn}
-\addreferee{M.}{Oooooooooo}{Pppppppp}
-
+\addreferee{M.}{Jean-Marie}{DE CONTO}
+\addreferee{M.}{Nobuhiro}{TERUNUMA}
 %########################################################################
 % Document start
 %########################################################################
-
 \begin{document}
-
 %Print title NOW
 \maketitle%
-
 %Disable page numbering
 \pagestyle{empty}
-
 %########################################################################
 % Multilingual abstracts
 %########################################################################
-
 % %French abstract:
 % \begin{abstract}
 % \input{theabstract}
 % \end{abstract}
-
 %Horizontal rule
 \noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
-
 %English abstract:
 \begin{abstract}[english]
 \input{theabstract}
 \end{abstract}
-
 \pagebreak
-
 % %German abstract:
 % \begin{abstract}[german]
 % \dummytext
 % \end{abstract}
-
 %Horizontal rule
 \noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
-
-% %Italian abstract:
-% \begin{abstract}[italian]
-% \dummytext
-% \end{abstract}
-
 %########################################################################
 % Acknowledgments
 %########################################################################
-
 \pagebreak\strut\newpage
-
 \section*{Remerciements}
 %Put the text vertically centered
 \input{mesremerciements}
-
 \newpage
-
 %########################################################################
 % Contents
 %########################################################################
-
 \strut\newpage
-
+\microtypesetup{protrusion=false}
 \tableofcontents
-
+\listoffigures
+\listoftables
+\microtypesetup{protrusion=true}
 \newpage
-
 %########################################################################
 % Introduction
 %########################################################################
 %Enable page numbering
 \pagestyle{fancy}
-\section*{Introduction}
-\addcontentsline{toc}{section}{Introduction}
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
 \input{theintro}
 \section*{The exploration of high energy physics}
-\addcontentsline{toc}{subsection}{The exploration of high energy physics}
-\addcontentsline{toc}{subsection}{Circular and linear colliders}
-% \addcontentsline{toc}{subsection}{The linear colliders (CLIC, ILC)}
-% \addcontentsline{toc}{subsection}{The Accelerator Test Facility (ATF)}
+\addcontentsline{toc}{section}{The exploration of high energy physics}
+\section*{Circular and linear colliders}
+\addcontentsline{toc}{section}{Circular and linear colliders}
 %########################################################################
 % First part
 %########################################################################
 \part{The Linear Colliders}
-\section{Purpose of a linear collider}
-\section{Linear Collider Concepts}
-\subsection{Luminosity}
-\subsection{Optics}
+\chapter{Purpose of a linear collider}
+\chapter{Linear Collider Concepts}
+\section{Luminosity}
+\section{Optics}
 % \subsection{The telescopic design and the Chromaticity correction methods}
-\subsection{Beam Delivery System (BDS)}
-\subsection{Final Focus Sections (FFS)}
+\section{Beam Delivery System (BDS)}
+\section{Final Focus Sections (FFS)}
 % \subsection{The Intereaction Region (IR) and Interaction Point (IP)}
 % \subsection{Chromaticity correction}
-\section{Overview of FFS effects}
-\subsection{Beamstrahlung}
-\subsection{Hourglass effect}
-\subsection{Crossing angle}
-\subsection{Chromaticity}
-\section{Current Linear Collider Projects}
-\subsection{International Linear Collider (ILC)}
-\subsection{Compact Linear Collider (CLIC)}
+\chapter{Overview of FFS effects}
+\section{Beamstrahlung}
+\section{Hourglass effect}
+\section{Crossing angle}
+\section{Chromaticity}
+\chapter{Current Linear Collider Projects}
+\section{International Linear Collider (ILC)}
+\section{Compact Linear Collider (CLIC)}
 The first chapter...???
 %########################################################################
 % Second part
 %########################################################################
 \part{Final focus design for small beam size}
-\section{Chromaticity correction methods}
-\subsection{Non-local correction}
-\subsection{Local correction}
-\subsection{Non-interleaved correction (to be mentioned at least ???)}
-\section{Chromaticity minimization in the Final Doublet (FD)}
-\section{Radiation in Bending Magnets}
-\subsection{Theory of radiation in a bending magnet}
-\subsection{Generalization for dispersive regions}
-\subsection{Results}
-\section{Oide effect}
-\subsection{Focusing limit (Oide effect)}
-\subsection{Mitigation on the beam size impact}
+\chapter{Chromaticity correction methods}
+\section{Non-local correction}
+\section{Local correction}
+\section{Non-interleaved correction (to be mentioned at least ???)}
+\chapter{Chromaticity minimization in the Final Doublet (FD)}
+\input{ChromaticityMinimization.tex}
+\chapter{Radiation in Bending Magnets}\label{bendrad}
+\input{BendingMagnet.tex}
+\chapter{Oide effect}
+\input{theOide.tex}
 \newpage
 %########################################################################
 % Third part
 %########################################################################
 \part{The Accelerator Test Facility (ATF/ATF2)}
-\section{Relevance of ATF/ATF2}
-\subsection{Facility purpose}
-\subsection{Beam line Description}
-\subsection{Recent goals and achievements}
-\subsection{Current work}
-\section{The cavity Beam Position Monitor (BPM)}
-\subsection{Theory}
-\subsection{BPM parameters}
-\subsection{Signals from a BPM}
+\chapter{Relevance of ATF/ATF2}
+\section{Facility purpose}
+\section{Beam line Description}
+\section{Recent goals and achievements}
+\section{Current work}
+\chapter{The cavity Beam Position Monitor (BPM)}
+\section{Theory}
+\input{CBPM_theory.tex}
+\section{BPM parameters}
+\section{Signals from a BPM}
 \part{BPMs at the ATF2 Interaction Point (IP)}
-\subsection{System specifications for the ATF2 line}
-\subsection{Mechanical system description}
-\subsection{Electrical system description}
-\subsection{Processing system description}
-\section{BPM Signals data analysis method}
-\subsection{Position scans}
-\subsection{Angle scans}
-\subsection{Jitter acquisitions}
-\section{Installation}
+\section{System specifications for the ATF2 line}
+\section{Mechanical system description}
+\section{Electrical system description}
+\section{Processing system description}
+\chapter{BPM Signals data analysis method}
+\section{Position scans}
+\section{Angle scans}
+\section{Jitter acquisitions}
+\chapter{Installation}
 The first section ... ???
-\subsection{Vacuum chamber}
-\subsection{BPM movers mechanical and electrical system}
-\section{Results}
-\subsection{Calibration}
-\subsection{Dynamic Range}
-\subsection{Resolution}
-\subsection{Alignment}
-\section{Conclusions}
+\section{Vacuum chamber}
+\section{BPM movers mechanical and electrical system}
+\chapter{Results}
+\section{Calibration}
+\section{Dynamic Range}
+\section{Resolution}
+\section{Alignment}
+\chapter{Conclusions}
 The first subsection... ???
 %########################################################################
 % Conclusions
 %########################################################################
 \part{Conclusions, Results and Perspectives}
+\chapter*{Final Conclusions}
+\addcontentsline{toc}{chapter}{Final Conclusions}
+\input{FinalConclusion.tex}
 %########################################################################
 % Bibliography
 %########################################################################
 \thispagestyle{empty}
 \strut\newpage
-\addcontentsline{toc}{section}{Références}
-\begin{thebibliography}{100}
+\addcontentsline{toc}{chapter}{Bibliography}
 \labelwidth=4em
 \addtolength\leftskip{25pt}
 \setlength\labelsep{0pt}
 \addtolength\parskip{\smallskipamount}
-\bibitem[AAA]{AAA}{Blablabla, blablablabla, blablablabla, blablablabla.}
-\bibitem[BBB]{BBB}{Blablabla, blablablabla, blablablabla, blablablabla.}
-\bibitem[CCC]{CCC}{Blablabla, blablablabla, blablablabla, blablablabla.}
-\bibitem[DDD]{DDD}{Blablabla, blablablabla, blablablabla, blablablabla.}
-\bibitem[EEE]{EEE}{Blablabla, blablablabla, blablablabla, blablablabla.}
-\bibitem[FFF]{FFF}{Blablabla, blablablabla, blablablabla, blablablabla.}
-\end{thebibliography}
-
+\printbibliography
 \end{document}
-
-%########################################################################
-% Document end
-%########################################################################
