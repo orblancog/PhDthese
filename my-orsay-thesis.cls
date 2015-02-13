@@ -341,7 +341,7 @@
     \end{minipage}%
     \\[1.5\bigskipamount]%
     \large%
-    Sp\'ecialit\'e: Physique de Particules et Acc\'el\'eraterus%
+    Discipline : Physique%
     \\[\medskipamount]%
     par%
     \\[\medskipamount]%
@@ -393,21 +393,29 @@
       Th\`ese pr\'epar\'ee au\\%
             \textbf{Laboratoire de L'acc\'el\'erateur Lin\'eaire (LAL)}\\%
 %       UMR8607\\%
-      Centre Scientifique d'Orsay, B\^atiment 200 BP 34\\%
-      \numprint{91898} Orsay CEDEX, France%
-      \vspace*{0.4cm}
+      Le Centre Scientifique d'Orsay, B\^atiment 200 BP 34\\%
+      \numprint{91898} Orsay CEDEX, France\\%
+      \vspace*{0.4cm}\\%
+      financ\'e par,\\%
+      \vspace*{0.4cm}\\%
+      \textbf{Centre National de la Recherche Scientifique (CNRS)}\\%
+%       et,\\%
+      \textbf{Organisation Europ\'eenne pour la Recherche Nucl\'eaire (CERN)}\\%
+      \vspace*{0.4cm}\par
     \end{tabular}%
   }%
   \if@orsay@logos%
     \noindent%
-    \includelogo[width=0.3\textwidth]{LAL}%
+    \raisebox{10ex}{\hspace*{0.4cm}\includelogo[width=0.19\textwidth]{LAL}}\\%
+    \raisebox{0.5ex}{\includelogo[width=0.112\textwidth]{CNRS}}\;%
+    \includelogo[width=0.12\textwidth]{CERN}%
   \else%
     \null%
   \fi%
   \hfill%
   \@ifundefined{@orsay@templena}{\newlength\@orsay@templena}{}%
   \settoheight\@orsay@templena{\@temp}%
-  \addtolength\@orsay@templena{-0.75\bigskipamount}%
+  \addtolength\@orsay@templena{-0.9\bigskipamount}%
   \raisebox{\@orsay@templena}[0pt][0pt]{\@temp}%
   \normalsize%
   \newpage%
