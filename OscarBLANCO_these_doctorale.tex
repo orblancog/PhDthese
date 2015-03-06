@@ -7,6 +7,8 @@
 \usepackage{cancel}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{subcaption}
+\usepackage{tikz}
 \usepackage{graphicx}
 % \bibliographystyle{unsrt}
 \usepackage[hyperref=true,
@@ -34,6 +36,9 @@
               {1={ ,750},2={ ,500},3={ ,500},4={ ,500},5={ ,500},
                6={ ,500},7={ ,600},8={ ,500},9={ ,500},0={ ,500}}
 \graphicspath{{./figures/}}
+% \setlength{\parindent}{4em}
+% \setlength{\parskip}{1em}
+% \renewcommand{\baselinestretch}{2.0}
 %########################################################################
 % Title page
 %########################################################################
@@ -46,15 +51,14 @@
 %Order number of the thesis
 \ordernumber{xxxx}
 %Date of defense
-\date{3 juillet 2015}
+\date{03/07/2015}
 %You define the commission member list using \addcommissionmember (mandatory) with an optional role (eg: president, supervisor, etc...)
-\addcommissionmember[Directeur de thèse]{M.}{Philip}{Bambade}
-\addcommissionmember[Codirecteur de thèse]{M.}{Rogelio}{Tomás}
-\addcommissionmember{M.}{Toshiaki}{Tauchi}
-\addcommissionmember[Président du jury]{M.}{Iiii}{Jjjjjjjjjjjj}
-%If some referees are not part of the commission, you can add them in a separate list with \addreferee (optional)
-\addreferee{M.}{Jean-Marie}{DE CONTO}
-\addreferee{M.}{Nobuhiro}{TERUNUMA}
+\addcommissionmember[Directeur de thèse]{Directeur D\'epartement Acc\'el\'erateurs (LAL)}{Philip}{Bambade}
+\addcommissionmember[Codirecteur de thèse]{LHC MD Coordinator (CERN)}{Rogelio}{Tomás}
+\addcommissionmember[Rapporteur]{Directeur du Laboratoire (LAL)}{Achille}{STOCCHI}
+\addcommissionmember[Examinateur]{??? (KEK)}{Toshiaki}{Tauchi}
+\addcommissionmember[Rapporteur]{??? (IN2P3)}{Jean-Marie}{DE CONTO}
+\addcommissionmember[Rapporteur]{??? (ATF/KEK)}{Nobuhiro}{TERUNUMA}
 %########################################################################
 % Document start
 %########################################################################
@@ -144,14 +148,9 @@ The first chapter...???
 %########################################################################
 % Third part
 %########################################################################
-\part{The Accelerator Test Facility (ATF/ATF2)}
-\chapter{Relevance of ATF/ATF2}
-\section{Facility purpose}
-\section{Beam line Description}
-\section{Recent goals and achievements}
-\section{Current work}
-\input{CBPM_theory.tex}
-\part{BPMs at the ATF2 Interaction Point (IP)}
+% \part{The Accelerator Test Facility (ATF/ATF2)}
+\part{BPMs at the ATF2 Interaction Point (IPBPMs)}
+\input{ATF2relevance.tex}
 \input{BPMsIntro.tex}
 \input{BPMsSystem.tex}
 \chapter{BPM Signals data analysis method}
@@ -162,12 +161,11 @@ The first chapter...???
 The first section ... ???
 \section{Vacuum chamber}
 \section{BPM movers mechanical and electrical system}
-\chapter{Results}
+\chapter{Results and conclusions}
 \section{Calibration}
 \section{Dynamic Range}
 \section{Resolution}
 \section{Alignment}
-\chapter{Conclusions}
 The first subsection... ???
 %########################################################################
 % Conclusions

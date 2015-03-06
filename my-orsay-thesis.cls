@@ -288,7 +288,8 @@
   \ifthenelse{\equal{#1}{}}{%
     \expandafter\def\csname @member@\the@member\endcsname{#2&#3&\textsc{#4}&}%
   }{%
-    \expandafter\def\csname @member@\the@member\endcsname{#2&#3&\textsc{#4}&(#1)}%
+%     \expandafter\def\csname @member@\the@member\endcsname{#2&#3&\textsc{#4}&(#1)}%
+    \expandafter\def\csname @member@\the@member\endcsname{#1&#3&\textsc{#4}&#2}%
   }%
 }
 
@@ -312,7 +313,9 @@
   \Large%
   \if@orsay@logos%
     \noindent%
-    \raisebox{0ex}{\includelogo[height=2cm]{logoUPS}}%
+    \raisebox{0ex}{\includelogo[height=2cm]{Logo_UPS}}%
+    \raisebox{-1ex}{\includelogo[height=2.5cm]{LAL}}%
+    \raisebox{-0.2ex}{\includelogo[height=2.1cm]{CERN}}%
     \hfill%
     \includelogo[height=2.5cm]{ED517}%
     {\normalsize\\}%
@@ -326,26 +329,33 @@
       \end{tabular}%
     \end{center}%
   \fi%
-  {\normalsize\No d'ordre~: \@ordernumber}%
+%   {\normalsize\No d'ordre~: \@ordernumber}%
   \\[\bigskipamount]%
   \begin{center}%
-    \textbf{TH\`ESE}%
-    \\[\bigskipamount]%
-    \large%
-    Pr\'esent\'ee pour obtenir%
-    \\[1.5\bigskipamount]%
+    \textbf{UNIVERSIT\'E PARIS-SUD}\\[1.5\bigskipamount]%
+%     \\[\bigskipamount]%
+%     \large %
+%     Pr\'esent\'ee pour obtenir%
+%     \\[1.5\bigskipamount]%
     \begin{minipage}{0.65\textwidth}%
       \large%
       \centering%
-      LE GRADE DE DOCTEUR EN SCIENCES DE L'UNIVERSIT\'E PARIS-SUD XI%
+      \textbf{\'ECOLE DOCTORAL 517 : }\\%
+      \textbf{PARTICULES, NOYAUX ET COSMOS}
     \end{minipage}%
-    \\[1.5\bigskipamount]%
+    \\[3.0\bigskipamount]%
+    {\large
+    \textbf{Laboratoire de l'Acc\'el\'erateur Lin\'eaire (LAL)}\\
+    \textbf{Organisation Europ\'eenne pour la Recherche Nucl\'eaire (CERN)}
+    }
+    \\[1.5\bigskipamount]
     \large%
+    THES\`E DE DOCTORAT\\
     Discipline : Physique%
-    \\[\medskipamount]%
+    \\[1.5\bigskipamount]
     par%
     \\[\medskipamount]%
-    \@author%
+    \textbf{\@author}%
     \\[4\bigskipamount]%
     \begin{minipage}{0.9\textwidth}%
       \LARGE%
@@ -356,6 +366,7 @@
       \selectlanguage{frenchb}%
     \end{minipage}%
   \end{center}%
+  \raggedright%
   \vfill%
   \ifnum\the@member=0\relax%
     \ClassWarning{my-orsay-thesis}{No commission member have been given}{You can provide members using the command \string\addcommissionmember.}%
@@ -363,8 +374,9 @@
     \normalsize%
     \@ifundefined{c@@tempa}{\newcounter{@tempa}}{}%
     \setcounter{@tempa}{0}%
-    \begin{tabular}{>{\hspace{0.08\textwidth}}cr@{ }ll}%
-      \multicolumn{4}{l}{\large Soutenue le \@date{} devant la Commission d'examen:}\\[\medskipamount]%
+    \begin{tabular}{>{\hspace{-0.08\textwidth}}lr@{ }ll}%
+      \multicolumn{4}{l}{\large\hspace*{-1.5cm} \textbf{Date de soutenance :} \@date{}}\\[\medskipamount]%
+      \multicolumn{4}{l}{\large\hspace*{-1.5cm} \textbf{Composition du jury :}}\\[\medskipamount]%
       \whiledo{\value{@tempa}<\value{@member}}{%
         \stepcounter{@tempa}%
         \csname @member@\the@tempa\endcsname%
@@ -375,7 +387,7 @@
       \ifnum\value{@referee}>0\relax
         \setcounter{@tempa}{0}%
         \\[\bigskipamount]%
-        \multicolumn{4}{l}{\large Rapporteurs:}\\[\medskipamount]%
+%         \multicolumn{4}{l}{\large Rapporteurs:}\\[\medskipamount]%
         \whiledo{\value{@tempa}<\value{@referee}}{%
           \stepcounter{@tempa}%
           \csname @referee@\the@tempa\endcsname\\%
