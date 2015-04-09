@@ -55,12 +55,12 @@
 %Date of defense
 \date{03/07/2015}
 %You define the commission member list using \addcommissionmember (mandatory) with an optional role (eg: president, supervisor, etc...)
-\addcommissionmember[Directeur de thèse]{Directeur D\'epartement Acc\'el\'erateurs (LAL)}{Philip}{Bambade}
-\addcommissionmember[Codirecteur de thèse]{LHC MD Coordinator (CERN)}{Rogelio}{Tomás}
-\addcommissionmember[Rapporteur]{Directeur du Laboratoire (LAL)}{Achille}{STOCCHI}
-\addcommissionmember[Examinateur]{??? (KEK)}{Toshiaki}{Tauchi}
-\addcommissionmember[Rapporteur]{??? (IN2P3)}{Jean-Marie}{DE CONTO}
-\addcommissionmember[Rapporteur]{??? (ATF/KEK)}{Nobuhiro}{TERUNUMA}
+\addcommissionmember[Directeur de thèse]{Directeur de Recherche}{Philip}{Bambade}
+\addcommissionmember[Codirecteur de thèse]{Physicien au CERN}{Rogelio}{Tomás}
+\addcommissionmember[Président du Jury]{Professeur}{Achille}{STOCCHI}
+\addcommissionmember[Examinateur]{Professeur Agrégé}{Toshiaki}{Tauchi}
+\addcommissionmember[Rapporteur]{Professeur}{Jean-Marie}{DE CONTO}
+\addcommissionmember[Rapporteur]{Professeur}{Nobuhiro}{TERUNUMA}
 %########################################################################
 % Document start
 %########################################################################
@@ -117,20 +117,13 @@
 % First part
 %########################################################################
 \part{The Linear Colliders}
-\chapter{Purpose of a linear collider}
+\input{LCpurpose.tex}
 \chapter{Linear Collider Concepts}
 \section{Luminosity}
 \section{Optics}
-% \subsection{The telescopic design and the Chromaticity correction methods}
 \section{Beam Delivery System (BDS)}
 \section{Final Focus Sections (FFS)}
-% \subsection{The Intereaction Region (IR) and Interaction Point (IP)}
-% \subsection{Chromaticity correction}
-\chapter{Overview of FFS effects}
-\section{Beamstrahlung}
-\section{Hourglass effect}
-\section{Crossing angle}
-\section{Chromaticity}
+\input{FFSoverview.tex}
 \chapter{Current Linear Collider Projects}
 \section{International Linear Collider (ILC)}
 \section{Compact Linear Collider (CLIC)}
@@ -139,11 +132,7 @@ The first chapter...???
 % Second part
 %########################################################################
 \part{Final focus design for small beam size}
-\chapter{Chromaticity correction methods}
-\section{Non-local correction}
-\section{Local correction}
-\section{Non-interleaved correction (to be mentioned at least ???)}
-\input{ChromaticityMinimization.tex}
+\input{Telescope.tex}
 \input{BendingMagnet.tex}
 \input{theOide.tex}
 \newpage
@@ -171,7 +160,7 @@ The first section ... ???
 The first subsection... ???
 %########################################################################
 % Conclusions
-%########################################################################
+%###############	#########################################################
 \part{Conclusions, Results and Perspectives}
 \input{FinalConclusion.tex}
 %########################################################################
