@@ -1,0 +1,71 @@
+\chapter{Oide Double Integral Solution}\label{c:primitiveF}
+% \section{The primitive \texorpdfstring{$\mathscr{F}$}{F}}
+The inner integral over $\phi'$ can be solved because it has a known primitive.
+\begin{equation}
+ \int_0^\phi (\sin \phi'+ \sqrt{k}l^*\cos\phi')^2d\phi'=\frac{\phi}{2}[(\sqrt{k}l^*)^2 +1 ] + \frac{\sin(2\phi)}{4}[(\sqrt{k}l^*)^2 -1]+\sqrt{k}l^*\sin^2\phi
+\end{equation}
+The Eq. (\ref{OideF}) can now be expressed as one integral.
+{\scriptsize
+\begin{align}
+F(\sqrt{k}L&,\sqrt{k}l^*) =\\
+&\int_0^{ \sqrt{k}L} |\sin\phi+\sqrt{k}l^*\cos\phi|^3 \left( \frac{\phi}{2}[(\sqrt{k}l^*)^2 +1 ] + \frac{\sin(2\phi)}{4}[(\sqrt{k}l^*)^2 -1]+\sqrt{k}l^*\sin^2\phi\right)^2 d\phi\notag
+\end{align}
+}
+The squared factor in brackets is always positive because all inner terms are real. The term inside the absolute value is also always positive, therefore, the integrand is always positive. Now, considering the function:
+  \begin{equation}
+  |\sin \phi + \sqrt{k}l^*\cos\phi|=\left\{
+  \begin{array}{c l l}
+&  \sin\phi+\sqrt{k}l^*\cos	\phi,\quad\qquad&\text{if}, \sin\phi+	\sqrt{k}l^*\cos	\phi\geq0\\
+&  -(\sin\phi+\sqrt{k}l^*\cos\phi),\quad&\text{if}, \sin\phi+	\sqrt{k}l^*\cos	\phi<0
+  \end{array}\right.\label{eq-absval}
+ \end{equation}
+sign changes at every point $\quad\phi_n = \arctan(-\sqrt{ k}l^*)\pm n\pi,\quad n\geq1$.\par
+It is possible to split the integration interval $i$ times, being $i$ the number of $\phi_n$ solutions where $0<\phi_n<\sqrt{k}L$. On each of those intervals, the absolute value definition can be removed and replaced by the corresponding expression in Eq. (\ref{eq-absval}), having only a difference in sign. By defining the primitive $\mathscr{F}$ in an interval where the factor inside the absolute value is positive it is possible to evaluate $F$ as it is shown in Eq. (\ref{eq-primeval}).
+\begin{equation}
+ F(\sqrt{k}L,\sqrt{k}l^*)= \mathscr{F}|_0^{\phi_1} - \mathscr{F}|_{\phi_1}^{\phi_2} +  \mathscr{F}|_{\phi_2}^{\phi_3} - \mathscr{F}|_{\phi_3}^{\phi_4}+ \cdots \pm  \mathscr{F}|_{\phi_i}^{\sqrt{k}L}\label{eq-primeval}
+\end{equation}
+The change of signs in each interval is only  given by the absolute value definition, then, it is simpler to add the absolute value of each contribution.
+\begin{equation}
+ F(\sqrt{k}L,\sqrt{k}l^*)= \bigr\vert\mathscr{F}|_0^{\phi_1}\bigr\vert + \bigr\vert\mathscr{F}|_{\phi_1}^{\phi_2}\bigr\vert +  \bigr\vert\mathscr{F}|_{\phi_2}^{\phi_3}\bigr\vert + \bigr\vert\mathscr{F}|_{\phi_3}^{\phi_4}\bigr\vert + \cdots +\bigr\vert\mathscr{F}|_{\phi_i}^{\sqrt{k}L}\bigr\vert
+\end{equation}
+If we know the primitive $\mathscr{F}$ and we are able to calculate the $\phi_n$s in the integration interval, then, it is possible to calculate the factor $F$ without using an approximate integrator. The double integration has been simplified to a primitive evaluation.\par
+The primitive $\mathscr{F}$ exists and it has been calculated using Maxima \cite{Maxima} and Wolfram Alpha Mathematica\cite{Wolfram} software.
+{\scriptsize
+ \begin{align*}
+  \mathscr{F}&=\frac{1}{1209600.0} \{1323 \cos(5\sqrt{k}L)-675 \cos(7\sqrt{k}L)\\
+        &\hspace{1cm}+\sqrt{k}L (378000 \sin(\sqrt{k}L)+21000 \sin(3\sqrt{k}L)-7560 \sin(5\sqrt{k}L))\\
+        &\hspace{0.5cm}+\sqrt{k}l^* [23625 \sin(\sqrt{k}L)+4725 \sin(3\sqrt{k}L)-14175 \sin(5\sqrt{k}L)+4725 \sin(7\sqrt{k}L)\\
+        &\hspace{1cm}+\sqrt{k}L  (-37800 \cos(5\sqrt{k}L))\\
+        &\hspace{1cm}+(\sqrt{k}L)^2 (-75600 \sin(3\sqrt{k}L)+226800 \sin(\sqrt{k}L))]\\
+        &\hspace{0.5cm}+(\sqrt{k}l^*)^2 [-49707 \cos(5\sqrt{k}L)+14175 \cos(7\sqrt{k}L)\\
+        &\hspace{1cm}+\sqrt{k}L  (1587600 \sin(\sqrt{k}L)-172200 \sin(3\sqrt{k}L)+68040 \sin(5\sqrt{k}L))]\\
+        &\hspace{0.5cm}+(\sqrt{k}l^*)^3 [-80325 \sin(\sqrt{k}L)-144725 \sin(3\sqrt{k}L)+82215 \sin(5\sqrt{k}L)-23625 \sin(7\sqrt{k}L)\\
+        &\hspace{1cm}+\sqrt{k}L  (37800 \cos(5\sqrt{k}L))\\
+        &\hspace{1cm}+(\sqrt{k}L)^2 (680400 \sin(\sqrt{k}L)-126000 \sin(3\sqrt{k}L))]\\
+        &\hspace{0.5cm}+(\sqrt{k}l^*)^4 [68985 \cos(5\sqrt{k}L)-23625 \cos(\sqrt{k}L)\\
+        &\hspace{1cm}+\sqrt{k}L  (2041200 \sin(\sqrt{k}L)-205800 \sin(3\sqrt{k}L)+37800 \sin(5\sqrt{k}L))]\\
+        &\hspace{0.5cm}+(\sqrt{k}l^*)^5 [-458325 \sin(\sqrt{k}L)-43225 \sin(3\sqrt{k}L)-25893 \sin(5\sqrt{k}L)+14175 \sin(7\sqrt{k}L)\\
+        &\hspace{1cm}     +\sqrt{k}L  (68040 \cos(5\sqrt{k}L))\\
+        &\hspace{1cm}     +(\sqrt{k}L)^2 (680400 \sin(\sqrt{k}L)-25200 \sin(3\sqrt{k}L))]\\
+        &\hspace{0.5cm}+(\sqrt{k}l^*)^6 [-945 \cos(5\sqrt{k}L)+4725 \cos(7\sqrt{k}L)\\
+        &\hspace{1cm}     +\sqrt{k}L  (831600 \sin(\sqrt{k}L)-12600 \sin(3\sqrt{k}L)-37800 \sin(5\sqrt{k}L))]\\
+        &\hspace{0.5cm}+(\sqrt{k}l^*)^7 [(-354375) \sin(\sqrt{k}L) + 5425 \sin(3\sqrt{k}L)-1323 \sin(5\sqrt{k}L)-675 \sin(7\sqrt{k}L)\\
+        &\hspace{1cm}+\sqrt{k}L  (-7560 \cos(5\sqrt{k}L))\\
+        &\hspace{1cm}+(\sqrt{k}L)^2 (226800 \sin(\sqrt{k}L) + 25200 \sin(3\sqrt{k}L))]\\
+        &\hspace{0.5cm}+\cos(\sqrt{k}L) ((\sqrt{k}l^*)^2+1)(4725)[(\sqrt{k}l^*)^5(\sqrt{k}L)(80)\\
+        &\hspace{1cm}     +(\sqrt{k}l^*)^4 (155-48(\sqrt{k}L)^2)\\
+        &\hspace{1cm}     +(\sqrt{k}l^*)^3 (\sqrt{k}L)(64)\\
+        &\hspace{1cm}     +(\sqrt{k}l^*)^2 (182-96 (\sqrt{k}L)^2)\\
+        &\hspace{1cm}     +\sqrt{k}l^*  (-16 \sqrt{k}L)\\
+        &\hspace{1cm}     +(\sqrt{k}L)^2 (-48)+75]\\
+        &\hspace{0.5cm}+\cos(3\sqrt{k}L) (-175) [(\sqrt{k}l^*)^7 (\sqrt{k}L) (120)\\
+        &\hspace{1cm}    +(\sqrt{k}l^*)^6(3)(144(\sqrt{k}L)^2+71)\\
+        &\hspace{1cm}    +(\sqrt{k}l^*)^5 (\sqrt{k}L) (744)\\
+        &\hspace{1cm}    +(\sqrt{k}l^*)^4 (720(\sqrt{k}L)^2+347)\\
+        &\hspace{1cm}    +(\sqrt{k}l^*)^3 (\sqrt{k}L)(-24)\\
+        &\hspace{1cm}    +(\sqrt{k}l^*)^2 (144 (\sqrt{k}L)^2-473)\\
+        &\hspace{1cm}    +\sqrt{k}l^* (-648) \sqrt{k}L\\
+        &\hspace{1cm}    +(\sqrt{k}L)^2 (-144)-31]\}
+ \end{align*}
+}
+In order to confirm that the code implementation gave the same result than the original double integral, random values were assigned to $\sqrt{k}l^*$ and $\sqrt{k}L$ and both expressions, the solved and the double integral, were numerically evaluated with difference lower than $10^{-3}$ relative.\par
