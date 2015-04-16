@@ -101,7 +101,7 @@
 % Base class and packages
 %########################################################################
 
-\LoadClass[a4paper,twoside,12pt]{report}
+\LoadClass[a4paper,twoside,11pt]{report}
 
 %hyperref
 \if@orsay@hyperref%
