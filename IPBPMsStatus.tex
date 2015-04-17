@@ -94,7 +94,7 @@ The processing and cavity response are combined in the calibration study showing
  \includegraphics[scale=0.3,angle=-90]{image01_Qp.pdf}\caption{Effect of attenuation in $Q'$ signals from calibrations. Errors bars are RMS.}\label{f:Qp}
 \end{figure}
 In the same way, the IPBy calibration vs charge is shown in Fig. \ref{f:chargescan}, where the calibration values have been normalized to the minimum charge and attenuation is fixed at 10 dB. The calibration constant decays by more than $5\%$ at charges above $0.4\times10^{10}$ particles.\par
-Using the non saturated calibration at $0.36\times10^{10}$ and 10 dB att. we obtain an IPBy dynamic range of 0.36 V, equivalent to 11 $\mu$m using $c_{mAB}$, where cavity calibration $c_B$ varies less than $ \pm5\%$.\par
+Using the non saturated calibration at $0.36\times10^{10}$ and 10 dB att. we obtain an IPBy dynamic range of 0.36 V, equivalent to 11 $\mu$m using $c_{mAB}$, where cavity calibration $c_B$ varies less than $ \pm5\%$.  Similar dynamic ranges, in the order or 8 to 10 $\mu$m, have been found for IPAy and IPCy, however they lack the charge scan.\par
 IPBy $Q'$ signal fills up almost all dynamic range at 10 dB attenuation and $0.4\times10^{10}$ particles, and it is saturating the processing electronics at 0 dB.\par
 \begin{figure}[!htb]
 \centering%\hspace*{-0.6cm}
@@ -116,25 +116,80 @@ The acquisition system resolution is specified in Sect. \ref{s:acqsys}. Only the
 The BPMs, processing electronics and conexions along the BPM signal path generate noise limiting the minimum detectable waveform. This minimum is estimated by scanning the measured jitter vs the attenuation value.\par
 At large attenuations the noise floor is bigger than the BPM signal, while at low attenuations is the opposite. There is an inflection point where both are relevant. The cavity calibration are used to scale it in nm.\par
 The jitter acquisition is the measurement of bunch position over several hundreds of pulses with an static BPM position setting. 
-The readings from the 3 BPMs are shown in Fig. (\ref{f:resojitter}). Jitter for the three BPMs is in the order of $300\sim400$nm. At 40 dB the limit imposes over the signal and by extrapolation the resolution limit per BPM is 10 nm for IPAy and IPBy, and 20 nm for IPCy at 0 dB.\par
+The readings from the 3 BPMs are shown in Fig. (\ref{f:resojitter}). Jitter for the three BPMs is in the order of $300\sim400$nm. At 40 dB the limit imposes over the signal and by extrapolation the resolution limit per BPM is 13 nm for IPAy, 11 nm for IPBy, and 23 nm for IPCy at 0 dB.\par
 \begin{figure}[!htb]
-\centering\hspace*{-0.6cm}
-\begin{subfigure}{0.4\textwidth}
+\centering%\hspace*{-0.6cm}
+% \begin{subfigure}{0.4\textwidth}
  \includegraphics[scale=0.3,angle=-90]{image01_jitter.pdf}\caption{Jitter measurement for the 3 BPMs.}\label{f:resojitter}
-\end{subfigure}\hspace*{1cm}
-\begin{subfigure}{0.4\textwidth}
- \includegraphics[scale=0.3,angle=-90]{image01_noisetot.pdf}\caption{Noise per channel for the 3 BPMs.}\label{f:resonoisetot}
-\end{subfigure}\caption{Resolution extrapolation by jitter measurement for the 3BPMs.}\label{f:resojitternoise}
+% \end{subfigure}\hspace*{1cm}
+% \begin{subfigure}{0.4\textwidth}
+%  \includegraphics[scale=0.3,angle=-90]{image01_noisetot.pdf}\caption{Noise per channel for the 3 BPMs.}\label{f:resonoisetot}
+% \end{subfigure}\caption{Resolution extrapolation by jitter measurement for the 3BPMs.}\label{f:resojitternoise}
 \end{figure}
 It is also clear that IPC shows worst resolution limit that IPA and IPB. Two possibilities arise: the electronics noise is larger for IPC or the sensitivity is lower.\par 
 \subsubsection{Noise floor}
-Fig. (\ref{f:resonoisetot}) shows the noise from the jitter acquisition. It is clear that noise is consistent through out the calibration scan and therefore the difference in jitter seen for IPCy at 40dB att. comes from the calibration factor. Using the total gain to \par
-Compatible with \cite{PhysRevSTAB.11.062801}
-
+Jitter measurement at 60 dB and 70 dB attenuation with $0.4\times10^{10}$ particles shows that after substraction of known gains from first, second down-mixing stages and hybrid the noise floor value varies $\pm1$ dB among BPMs.\par
+Although, it can not be considered a direct measurement of the processing noise floor as in \cite{PhysRevSTAB.11.062801} because additional losses are not included, it does indicates that noise floor is similar for the three BPMs and it is not the explanation of the discrepancy seen in Fig. (\ref{f:resojitter}) between IPCy when compared to IPAy and IPBy.\par
+A limit of 10 nm resolution per BPM is imposed by the processing electronics noise floor in the current state.\par
 
 \subsubsection{Cavity sensitivity}\label{s:resosensi}
 Cavity sensitivity and processing electronics gain change the calibration factor. Due to the 6dB mismatch between the mesured dynamic range measured and predicted for IPBy, as shown in Sect. \ref{s:dynrange}, and the lack of charge scans for IPAy and IPCy, it is not possible to conclude about the total gain without making assumptions.\par
 However, the signal decay time from waveforms gives information about the cavity sensitivity. 
+
+\subsection{Resolution by trajectory reconstruction}
+The system resolution could be estimated by the reconstruction of beam trajectories. Two BPMs are used to measure the bunch position an to predict the measurement on the third BPM. The residuals from substraction of BPM prediction and measurement will depend on each BPM resolution.\par
+\subsubsection{Geometrical method}
+As longitudinal distances are know within a $\pm0.1$ mm over 250 mm, i.e. better than 1\% precision, then, geometrical factors can be used to predict the beam trajectory \cite{Nakamura:2008}, assuming that all three BPMs have the same resolution. The advantage of this methodoly is that it is independent from beam optics as it does not fit parameter to do predictions.\par
+\begin{figure}[!htb]
+\centering%\hspace*{-0.6cm}
+% \begin{subfigure}{0.4\textwidth}
+ \includegraphics[scale=0.8,angle=0]{3BPM_Measured_Predicted_changing_cals.pdf}\caption{Correlation of the three BPMs measurements and predictions.}\label{f:3BPMpredictions}.
+% \end{subfigure}\hspace*{1cm}
+% \begin{subfigure}{0.4\textwidth}
+%  \includegraphics[scale=0.3,angle=-90]{image01_noisetot.pdf}\caption{Noise per channel for the 3 BPMs.}\label{f:resonoisetot}
+% \end{subfigure}\caption{Resolution extrapolation by jitter measurement for the 3BPMs.}\label{f:resojitternoise}
+\end{figure}
+Fig. (\ref{f:3BPMpredictions}) shows the correlation between the measured and predicted position at $4\times10^{10}$ particles per bunch and 0 dB attenuation, where calibration has been modified by +3.7\%, +10.9\% and -2.8\% for IPAy, IPBy and IPCy respectively in order to obtain 100\% slopes within 2\%.\par
+The large correction made in the IPBy calibration could be explained by the results shown in Sect. \ref{s:calibration}, and the others lay within calibration precision limits.\par
+The measured jitter and the residuals from substracting the predicted value are gaussian. The jitter values, slopes and correlations of predicted vs measured positions, and geometrical factors are shown in Table \ref{t:resodata}.\par
+The resolution per BPM estimated with this method is $(47.4\pm0.7)$ nm.\par
+\begin{table}[hbt]
+\centering
+\begin{tabular}{c||c|c|c}\hline
+Parameter & IPAy & IPBy & IPCy\\ \hline\hline
+Jitter [$\mu$m] & 0.437 & 0.216 & 0.498\\\hline
+Slope & $0.9757\pm0.0044$ & $0.9827\pm0.0062$ & $0.9753\pm0.0085$\\\hline
+Correlation & 0.9798 & 0.9626 & 0.9322 \\\hline
+Geometrical factor & 0.5457 & 0.7988 & 0.2531\\\hline
+\end{tabular}\caption{Results from trajectory reconstruction.}\label{t:resodata}
+\end{table}
+\subsubsection{Optics Phase Advance}
+The optics phase advance $\phi$ is estimated by measurement of position jitter correlations among BPMs and Table \ref{t:phaseadv} shows the result of jitter correlation and phase advance between pairs of BPMs.\par
+\begin{table}[htb]
+\centering
+\begin{tabular}{c||c|c|c}\hline
+Parameter & IPAy to IPBy & IPBy to IPCy & IPAy to IPCy\\ \hline\hline
+Jitter correlation & 0.84 & -0.24 & -0.69\\\hline
+Optics Phase Advance & 33\textdegree & 103\textdegree & 134\textdegree\\\hline
+\end{tabular}\caption{Jitter correlation and estimated phase advance for the 3 BPMs.}\label{t:phaseadv}
+\end{table}
+Jitter can be decompose in cos-like and sin-like jitter, therefore BPM resolution affects separately the trajectory reconstruction of each component due to phase advance. Being $r_{i}$ the measurement resolution at one BPM, and $r_{j}$ and $r_{k}$ the resolutions of BPMs $j,k$ used for extrapolation, the system resolution $r_s$ can be estimated from the individual resolutions by addind in quadrature the reconstruction errors from the cos-like and sine-like components, as in Eq. (\ref{eq:resos}).\par
+\begin{equation}
+ r_s=\sqrt{(r_{i}+r_{j}|\cos\phi_{ij}|+r_{k}|\cos\phi_{ik}|)^2+(r_{i}+r_{j}|\sin\phi_{ij}|+r_{k}|\sin\phi_{ik}|)^2}\label{eq:resos}
+\end{equation}
+Using the resolution limits estimated from noise limit for the 3 BPMs, Eq. (\ref{eq:resos}) is used to calculate the system resolution at each BPM. Results are shown in Table \ref{t:resos}.
+\begin{table}[htb]
+\centering
+\begin{tabular}{c||c|c|c}\hline
+Parameter & IPAy & IPBy & IPCy\\ \hline\hline
+Resolution $r_i$ [nm] & 13 & 11 & 23\\\hline
+Resolution $r_s$ [nm] & 52 & 49 & 55\\\hline
+\end{tabular}\caption{Estimated resolution limit per BPM and system.}\label{t:resos}
+\end{table}
+The IPBy system resoltion result is the closest to the geometrical result, this is justified because it has the best individual resolution and the phase advances allow to predict cos-likes almost only from IPAy and sin-likes almost only from IPCy.\par
+It is worth noting that the optics here used is an special case where the focus is diluted. With the nominal optics the phase advance between BPMs is close multiples of $\pi$ making the individual resolution to add up linearly and therefore, the system resolution would be 47 nm, matching the geometrical result.
+\section{Feedback}
+Feedback has been tested by the FONT Group \cite{FONTfb:2015} obtaining a reduction of beam jitter down to 67 nm, compatible with the resolution shown in Section \ref{s:resolution}.
 
 
 \section{Status and Conclusions}
