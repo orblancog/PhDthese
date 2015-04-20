@@ -134,7 +134,8 @@ A limit of 10 nm resolution per BPM is imposed by the processing electronics noi
 
 \subsubsection{Cavity sensitivity}\label{s:resosensi}
 Cavity sensitivity and processing electronics gain change the calibration factor. Due to the 6dB mismatch between the mesured dynamic range measured and predicted for IPBy, as shown in Sect. \ref{s:dynrange}, and the lack of charge scans for IPAy and IPCy, it is not possible to conclude about the total gain without making assumptions.\par
-However, the signal decay time from waveforms gives information about the cavity sensitivity. 
+However, the signal decay time from waveforms gives information about the cavity sensitivity. The measure of decay time $\tau$ described in Sect. \ref{s:IPBPMsignals} shows 6 ns decay for IPCy compared to 11 ns and and 12 ns for IPAy and IPCy. This difference points out to large power loss attributed to low assembly tighness of bolts. In addition, 11 ns is short when compared with expected 17 ns from design. Althought, the cavity sensitivity is not affected by the power loss, it could increase the noise level making low voltage signals undetectable.\par
+The electronics gain requires requires to be measured per component and losses need to be identify in order to conclude whether noise limit comes from processing electronics or the cavity power loss.
 
 \subsection{Resolution by trajectory reconstruction}
 The system resolution could be estimated by the reconstruction of beam trajectories. Two BPMs are used to measure the bunch position an to predict the measurement on the third BPM. The residuals from substraction of BPM prediction and measurement will depend on each BPM resolution.\par
@@ -149,7 +150,7 @@ As longitudinal distances are know within a $\pm0.1$ mm over 250 mm, i.e. better
 %  \includegraphics[scale=0.3,angle=-90]{image01_noisetot.pdf}\caption{Noise per channel for the 3 BPMs.}\label{f:resonoisetot}
 % \end{subfigure}\caption{Resolution extrapolation by jitter measurement for the 3BPMs.}\label{f:resojitternoise}
 \end{figure}
-Fig. (\ref{f:3BPMpredictions}) shows the correlation between the measured and predicted position at $4\times10^{10}$ particles per bunch and 0 dB attenuation, where calibration has been modified by +3.7\%, +10.9\% and -2.8\% for IPAy, IPBy and IPCy respectively in order to obtain 100\% slopes within 2\%.\par
+Fig. (\ref{f:3BPMpredictions}) shows the correlation between the measured and predicted position at $4\times10^{10}$ particles per bunch and 0 dB attenuation, where calibration has been modified by +3.7\%, +10.9\% and -2.8\% for IPAy, IPBy and IPCy respectively in order to obtain unitary slopes within 2\%.\par
 The large correction made in the IPBy calibration could be explained by the results shown in Sect. \ref{s:calibration}, and the others lay within calibration precision limits.\par
 The measured jitter and the residuals from substracting the predicted value are gaussian. The jitter values, slopes and correlations of predicted vs measured positions, and geometrical factors are shown in Table \ref{t:resodata}.\par
 The resolution per BPM estimated with this method is $(47.4\pm0.7)$ nm.\par
@@ -190,17 +191,25 @@ The IPBy system resoltion result is the closest to the geometrical result, this 
 It is worth noting that the optics here used is an special case where the focus is diluted. With the nominal optics the phase advance between BPMs is close multiples of $\pi$ making the individual resolution to add up linearly and therefore, the system resolution would be 47 nm, matching the geometrical result.
 \section{Feedback}
 Feedback has been tested by the FONT Group \cite{FONTfb:2015} obtaining a reduction of beam jitter down to 67 nm, compatible with the resolution shown in Section \ref{s:resolution}.
-
-
 \section{Status and Conclusions}
-Table (\ref{t:IPBPMsStatus}) show summary of the current IP-BPMs results
+Table (\ref{t:IPBPMsStatus}) show summary of the current IP-BPMs results.\par
 \begin{table}[hbt]
 \centering
-\begin{tabular}{l|l|l|p{4cm}}\hline
+\scriptsize
+\begin{tabular}{l|l|l|p{6cm}}\hline
 PARAMETER & REQUIREMENT & STATUS & Comments\\\hline\hline
-Resolution & $\sim$nm & <50nm & Calibration factors ?\newline BPM sensitivity ?\newline Electronics ? \newline X to Y coupling ?\\\hline
-Dynamic Range & $\sim$10$\mu$m + extra & $1\mu$m$\sim3\mu$m at 0db & Linear Response of the Cavity ?\newline Electronics ?\newline No extra for alignment + Q' signal \\\hline
-Compatibility & IPBSM, EPICS & In work &Calibration Software OK\newline Jitter analysis Software OK\newline IP-BSM, needs common setup \newline EPICs, data still requires off-line analysis\\\hline
-Feedback & Operative & Tested	& \\\hline
+Resolution & $\sim$nm@$1\times10^{10}$ & <50nm@$0.4\sim0.5\times10^{10}$ & Calibration factors within 5\% linearity\newline BPM/Electronics noise : 10 nm per cavity\newline IPC sensitivity and/or gain : +20nm \newline X to Y coupling is still unexplored\\\hline
+Dynamic Range & $\sim$10$\mu$m + extra & $9\sim11\mu$m@10 dB att. & Cavity response is linear within 5\%\newline Electronics starts to saturate at $0.4\times10^{10}$\newline IPBy Q' signal saturates at 0 dB\\\hline
+Compatibility & IPBSM, EPICS & In work &Calibration Software : Initial version released and in use. Requires comparison with offline results.\newline Jitter analysis Software : Initial version released and in use. Requires comparison with offline analysis.\newline IP-BSM, requires study of resolution vs low charge, $0.1\sim0.5\times10^{10}$ .\newline EPICs is not synchronized. Position data availability is not online yet.\\\hline
+Feedback & Operative & Tested	& Jitter reduction to 67 nm.\newline Limited by BPM resolution.\\\hline
 \end{tabular}\caption{IPBPMs status.}\label{t:IPBPMsStatus}
 \end{table}
+The efferts to improve over the results here listed are continuos. Precisely now, two improvements have been done on the system. First, the horizontal and vertical plane can be analized simultaneouly, and data can be checked for coupling from one plane to another. Second, filters are added to the system in order to reduce the effect of mismatch frequency from down-mixed signal.\par
+At the moment, the first limitant to improve on resolution is noise limit. The target is to explore the origin of the noise and characterized the gain along the signals path. That will allow to conclude on the cavity sensitivity.\par
+The IPBy Q' sigma is second limitant to avoid saturations and calibration errors. The reason is unknown for the moment, but it could be generated by a misalignment between cavities or a large static monopole signal. I think the monopole would affect also the horizontal plane, therefore the updates in electronics will help to diagnose the system.\par
+In all cases the electronics needs to be updated because it saturates at half the bunch charge required. Extra dynamic range in electronics for residual Q' signals would solve the problem.\par
+Under the current conditions the characterization of the resolution at low charges is possible, if data synchronized with the IP-BSM system, then it will provide useful information when tuning the optics, leading to finally include the IPBSM as a regular measurement instrument.\par
+
+
+
+
