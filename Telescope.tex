@@ -1,25 +1,10 @@
 \chapter{Chromaticity in the FFS}
-In the Final Focus the goal is to minimize the beam size to recover the luminosity $L$ of a circular collider, limiting the energy loss due to beamstrahlung $\delta_{BS}$. Equation \ref{eq:lum_rad} highlights the dependence with beam size in the tranversal planes.
+In the Final Focus the goal is to minimize the beam size. If the lattice is conceived as a telescope where the matrix elements are as in Eq. (\ref{eq:telescope}), being $M_x, M_y$ the magnifications in horizontal and vertical planes, then, beam size to the first order does not depends on the energy spread $\delta$. Considering the second and third order components in the transfer map, as in Eq. (\ref{eq:tmap}), then, the telescope properties show that the main contribution to beam size is chromaticity $\xi_{x\atop y}$ given by the elements $T_{126},\,T_{346}$  \cite{Brown:1987}, identified in \cite{GarciaMorales:1982827} as\par
 \begin{equation}
- L \propto \frac{f_{rep}n_b^2}{\sigma_x\sigma_y}\qquad\delta_{BS}\propto\frac{n_b^2E}{(\sigma_x+\sigma_y)^2}\label{eq:lum_rad}
+ \xi_x = \frac{1}{\beta_x^*}\left(T_{116}^2\beta_{x0}+T_{126}^2\frac{1}{\beta_{x0}}\right)\qquad
+ \xi_y = \frac{1}{\beta_y^*}\left(T_{336}^2\beta_{y0}+T_{346}^2\frac{1}{\beta_{y0}}\right)
 \end{equation}
-Table (\ref{t:lum_rad}) shows how the beam size is decreased in all linear collider projects to compensate lower repetition rate and charges. In addition, horizontal beam size is larger than vertical beam size to preserve luminosity while reducing the beam strahlung effect.\par
-\begin{table}[!htb]
-{\scriptsize
-\centering
-\begin{tabular}{|l|c||c|c|c|c|}\hline
-Parameter & Symbol & LHC & ILC & CLIC 500 GeV& CLIC 3 TeV\\\hline\hline
-Energy/z (TeV) & $E$& 7& 0.250 & 0.250 & 1.500\\
-Bunch population & $n_b$ &$1.15\times10^{11}$&$2\times10^{10}$&$6.8\times10^9$&$3.72\times10^9$\\
-Repetition rate [Hz] &$f_{rep}$& $11.1\times10^{3}$&5 &50&50\\
-H/V. IP beam size [nm] & $\sigma_x/\sigma_y$&$16.6\times10^{3}$&474/5.9&202/2.3&40/1\\\hline
-E loss (Beamstrahlung) [$\Delta E/E$] &$\delta_{BS}$&-???&0.07&0.07&0.28\\
-Luminosity &$L$& $10^{34}$ &$1.57\times10^{34}$ & $2.3\times10^{34}$&$5.9\times10^{34}$\\\hline
-\end{tabular}\caption{Luminosity and beamstrahlung for the three current linear collider projects. LHC luminosity is added to compare the beam size and repetition rate from circular to linear colliders.}\label{t:lum_rad}
-}
-\end{table}
-It is shown in \cite{Brown:1987} that first order dependence with the energy spread, $\delta$, is cancelled if the lattice is conceived as a telescope where the matrix elements are as in Eq. (\ref{eq:telescope}), $M_x, M_y$ are the magnifications in horizontal and vertical planes. Also, if second and higher order components are considered in the transfer map, as in Eq. (\ref{eq:tmap}), then, the telescope properties show that the main contribution to beam size is chromaticity given by the elements $T_{126},\,T_{346}$.\par
-Therefore, the Final Focus Section (FFS) has been conceived as a telescope to demagnify the beam size with minimum effect of energy spread, where the main issue is the large chromaticity generated at the Final Doublet (FD), the last pair of quadrupoles which focus the beam to the Interaction Point (IP).
+being the 0-index the values at the input and *-index the values at the output. For this reason, the Final Focus Section (FFS) has been conceived as a telescope to demagnify the beam size with minimum effect of energy spread, where the main issue is the large chromaticity generated at the Final Doublet (FD), the last pair of quadrupoles which focus the beam at the Interaction Point (IP).
 \begin{equation}
 R=
  \begin{pmatrix}
@@ -30,27 +15,30 @@ R=
   \end{pmatrix}\label{eq:telescope}
 \end{equation}
 \begin{equation}
-x_i=\sum_{j=1}^6R_{ij}x_j+\sum_{j,k=1}^6T_{ijk}x_jx_k+\cdots\qquad x_i\in x,x',y,y',\tau,\delta\label{eq:tmap}
+x_i=\sum_{j=1}^6R_{ij}x_j+\sum_{j,k=1}^6T_{ijk}x_jx_k+\sum_{j,k,l=1}^6U_{ijkl}x_jx_kx_l+\cdots\qquad x_i\in x,x',y,y',\tau,\delta\label{eq:tmap}
 \end{equation}
 
 \section{Chromaticity minimization in the Final Doublet (FD)}
 % \section{Thin lens approximation}
-Being the chromaticity as in Eq. (\ref{eq:chrom}), where the components $T_{116},\,T_{336}$ have been cancelled by the telescope properties, here I find a configuration of distances and strengths that minimize the effect.
-\begin{equation}
- \xi_x = \frac{1}{\beta_x^*}\left(\cancelto{0}{T_{116}^2}\beta_{x0}+T_{126}^2\frac{1}{\beta_{x0}}\right)\qquad
- \xi_y = \frac{1}{\beta_y^*}\left(\cancelto{0}{T_{336}^2}\beta_{y0}+T_{346}^2\frac{1}{\beta_{y0}}\right)\label{eq:chrom}
-\end{equation}
+In this Section I find the Final Doublet distance that minimizes the chromaticity.\par 
+In the thin lens approximation, an FD as in Fig. (\ref{f:FDchrom}),  with $r=L/L_{IP}$ and $r_{im}=L_{IM}/L_{IP}$, has peak $\beta$-functions at the quadrupoles equal to $\beta_{x0\atop y0}=\frac{L^2_{IP}}{\beta^*_{x\atop y}}$  for $QD0$ and $
+\beta_{x1\atop y1}=\beta_{x0\atop y0}\left(1+r\pm\sqrt{\frac{r}{r_{im}}+r+\frac{r^2}{r_{im}}}\sqrt{\frac{1+r}{1+r/r_{im}}}\right)^2
+$ for $QF1$, using $\left(\frac{\beta^*}{L_{IP}}\right)^2\ll1$, i.e. a small $\beta$ function far from QD0. The factor $\beta_{x1\atop y1}/\beta_{x0\atop y0}$ is the beta function at QF1 relative to QD0.\par
 \begin{figure}[!htb]
  \centering
  \includegraphics[scale=0.6]{fig01.pdf}\caption{FD with focal points IM and IP at different distances.}\label{f:FDchrom}
  \end{figure}
-An FD as in Fig. (\ref{f:FDchrom}),  with $r=L/L_{IP}$ and $r_{im}=L_{IM}/L_{IP}$, has peak $\beta$-functions at the quadrupoles equal to $\beta_{x0\atop y0}=\frac{L^2_{IP}}{\beta^*_{x\atop y}}$  for $QD0$ and $
-\beta_{x1\atop y1}=\beta_{x0\atop y0}\left(1+r\pm\sqrt{\frac{r}{r_{im}}+r+\frac{r^2}{r_{im}}}\sqrt{\frac{1+r}{1+r/r_{im}}}\right)^2
-$ for $QF1$, using $\left(\frac{\beta^*}{L_{IP}}\right)^2\ll1$.\par
-The factor $\beta_{x1\atop y1}/\beta_{x0\atop y0}$ is the beta function at QF1 relative to QD0.\par
- In the thin lens approximation, chromaticity in the horizontal or vertical plane $\xi_{x\atop y}$ can be evaluated as $\xi_{x\atop y}=\mp\frac{1}{4\pi}\left(\beta_{x1\atop y1}k_1l_1-\beta_{x0\atop y0}k_0l_0\right)=\frac{1}{4\pi}\frac{L_{IP}}{\beta^*_{x\atop y}}\Xi_{x\atop y}(r,r_{im})
-$, 
-where $k,l$ are the quadrupole gradient and length, $\beta^*$ is the $\beta$ function at the IP and 
+Being the chromaticity for a single quadrupole as in Eq. (\ref{eq:chrom}) from \cite{GarciaMorales:1982827}, 
+\begin{equation}
+%  \xi_x = \frac{1}{\beta_x^*}\left(\cancelto{0}{T_{116}^2}\beta_{x0}+T_{126}^2\frac{1}{\beta_{x0}}\right)\qquad
+%  \xi_y = \frac{1}{\beta_y^*}\left(\cancelto{0}{T_{336}^2}\beta_{y0}+T_{346}^2\frac{1}{\beta_{y0}}\right)\label{eq:chrom}
+\xi_{x\atop y}=\int\beta_{x\atop y}(s)k(s)ds\label{eq:chrom}
+\end{equation}
+where the $k$ is the quadrupole gradient and $s$ the longitudinal coordinate, then, $\xi_{x\atop y}$ can be evaluated as
+\begin{equation}
+ \xi_{x\atop y}=\mp\left(\beta_{x1\atop y1}k_1l_1-\beta_{x0\atop y0}k_0l_0\right)=\frac{L_{IP}}{\beta^*_{x\atop y}}\Xi_{x\atop y}(r,r_{im})
+\end{equation}
+where $k,l$ are the quadrupole gradient and length, $\beta^*$ is the $\beta$ function at the IP, the indexes indicate the quadrupole and 
 %  \begin{align*}
 %  \Xi_{x\atop y}(r,r_{im})=&\mp\sqrt{\frac{1}{rr_{im}}+\frac{1}{r}+\frac{1}{r_{im}}}\sqrt{\frac{1+r/r_{im}}{1+r}}\\ &\left[\left(1+r\pm\sqrt{\frac{r}{r_{im}}+r+\frac{r^2}{r_{im}}}\sqrt{\frac{1+r}{1+r/r_{im}}}\right)^2\right.\\
 %  &\qquad\qquad\qquad\qquad\qquad\quad-\left.\left(\frac{1+r}{1+r/r_{im}}\right)\right]
@@ -59,17 +47,18 @@ where $k,l$ are the quadrupole gradient and length, $\beta^*$ is the $\beta$ fun
 \begin{equation}
  \Xi_{x\atop y}(r,r_{im})=\mp\sqrt{\frac{1}{rr_{im}}+\frac{1}{r}+\frac{1}{r_{im}}}\sqrt{\frac{1+r/r_{im}}{1+r}} \left[\left(1+r\pm\sqrt{\frac{r}{r_{im}}+r+\frac{r^2}{r_{im}}}\sqrt{\frac{1+r}{1+r/r_{im}}}\right)^2\right.-\left.\left(\frac{1+r}{1+r/r_{im}}\right)\right]
 \end{equation}}\par
-Figure (\ref{f:figT}) show the chromaticity $\Xi_x$ and $\Xi_y$ in $\frac{1}{4\pi}L_{IP}/\beta^*$ units, and the ratio of the beta functions at the quadrupoles.\par
-The IP beam size is increased by chromaticity as $\sigma^*_{x\atop y}=\sigma_{{x0\atop y0}}\sqrt{1+\xi^2_{x\atop y}\sigma_\delta^2}$, where $\sigma_0^2=\beta^*\epsilon$, valid for both transversal planes. Therefore, luminosity is approximately affected by the horizontal and vertical chromaticity as \par
-\begin{equation}
- L\propto\frac{1}{\sigma_x\sigma_y}=\frac{1}{\sigma_{x0}\sigma_{y0}\sqrt{1+(\xi^2_x+\xi^2_y)\sigma_\delta^2+\xi_x^4\xi_y^4\sigma_\delta^4}}
-\end{equation}
-One possibility is to minimize the addition of the horizontal and vertical chromaticities,
+Figure (\ref{f:figT}) show the chromaticity $\Xi_x$ and $\Xi_y$ in $L_{IP}/\beta^*$ units, and the ratio of the $\beta$ functions at the quadrupoles.\par
+% The IP beam size is increased by chromaticity as $\sigma^*_{x\atop y}=\sigma_{{x0\atop y0}}\sqrt{1+\xi^2_{x\atop y}\sigma_\delta^2}$, where $\sigma_0^2=\beta^*\epsilon$, valid for both transversal planes. Therefore, luminosity is approximately affected by the horizontal and vertical chromaticity as \par
+% \begin{equation}
+%  L\propto\frac{1}{\sigma_x\sigma_y}=\frac{1}{\sigma_{x0}\sigma_{y0}\sqrt{1+(\xi^2_x+\xi^2_y)\sigma_\delta^2+\xi_x^2\xi_y^2\sigma_\delta^4}}
+% \end{equation}
+In order to minimize the the product of dispersion and sextupole strengths used to substract the quadrupoles chromatic effect, explained in Section \ref{s:chromcorr}, one possibility is to minimize the sum of the horizontal and vertical chromaticities, i.e. the total chromaticity to be corrected. Being the sum, 
 \begin{align}
- \xi = \xi_x + \xi_y &= \frac{1}{4\pi}\frac{L_{IP}}{\beta^*_y}\left(\frac{\Xi_x(r,r_{im})}{\beta^*_x/\beta^*_y}+\Xi_y(r,r_{im})\right)\\
- &= \frac{1}{4\pi}\frac{L_{IP}}{\beta^*_y}\Xi(\beta^*_x/\beta^*_y,r,r_{im})
+ \xi = \xi_x + \xi_y &= \frac{L_{IP}}{\beta^*_y}\left(\frac{\Xi_x(r,r_{im})}{\beta^*_x/\beta^*_y}+\Xi_y(r,r_{im})\right)\\
+ &= \frac{L_{IP}}{\beta^*_y}\Xi(\beta^*_x/\beta^*_y,r,r_{im})
 \end{align}
-Figure (\ref{f:fig_3TeV}) shows $\Xi$ for CLIC 3 TeV, $\beta^*_x/\beta^*_y=6.9\text{mm}/0.068\text{mm}=101$, and Fig. (\ref{f:fig_500GeV}) it the equivalent for CLIC 500 GeV \cite{CLICdes}, $\beta^*_x/\beta^*_y=8.0\text{mm}/0.1\text{mm}=80$.\par Given $L_{IM}$, the minimum added chromaticity in the FD is found when $L$ is one to two times the distance to the IP. In addition, Figures (\ref{f:fig_3TeV}-\ref{f:fig_500GeV}) show the effect of scaling up the system. For example, starting at $L=L_{IP}$ and $L_{IM}=10L_{IP}$, it is clear that a system with $L=10L_{IP}$ and $L_{IM}=100L_{IP}$, will decrease the vertical chromaticity by increasing the horizontal chromaticity.
+Figure (\ref{f:fig_3TeV}) shows $\Xi$ for CLIC 3 TeV, $\beta^*_x/\beta^*_y=6.9\text{mm}/0.068\text{mm}=101$, and Fig. (\ref{f:fig_500GeV}) it the equivalent for CLIC 500 GeV \cite{CLICdes}, $\beta^*_x/\beta^*_y=8.0\text{mm}/0.1\text{mm}=80$.\par
+Given $L_{IM}$, the minimum added chromaticity in the FD is found when $L$ is one to two times the distance to the IP. In addition, Figures (\ref{f:fig_3TeV}-\ref{f:fig_500GeV}) show the effect of scaling up the system. For example, starting at $L=L_{IP}$ and $L_{IM}=10L_{IP}$, it is clear that a system with $L=10L_{IP}$ and $L_{IM}=100L_{IP}$, will decrease the vertical chromaticity by increasing the horizontal chromaticity.
 \begin{figure}
 \begin{subfigure}{0.5\textwidth}
  \includegraphics[scale=0.35,angle=-90]{./betax1a.pdf}\caption{}\label{figT:Bx}
@@ -113,22 +102,22 @@ Figure (\ref{f:fig_3TeV}) shows $\Xi$ for CLIC 3 TeV, $\beta^*_x/\beta^*_y=6.9\t
 \end{figure}
 \clearpage
 
-\section{Chromaticity correction}
-Due to the low-$\beta^*$ values required for linear colliders it is necessary to cancel out the chromaticity effect. Two methods have been used: non-local and local correction.??? Needs a rewriting , large chromaticity is generated
+\section{Chromaticity correction}\label{s:chromcorr}
+Large chromaticity is generated in linear colliders due to the low-$\beta^*$ values. Two methods have been used to cancel the chromatic effect : non-local and local correction.
 \begin{table}[!htb]
 \scriptsize
 \centering
-\begin{tabular}{|l|c||c|c|c|c|}\hline
-Parameter & Symbol & LHC & ILC & CLIC 500 GeV& CLIC 3 TeV\\\hline\hline
-Distance from IP to QD0 [m] & $L^*$&23& 3.5/4.5 & 4.3 & 3.5\\
-Vertical $\beta$ at the IP [mm] &$\beta_y^*$& 500 & 0.48 & 0.1&0.07\\
-Energy Spread [$10^{-3}$]& $\delta$&0.13&3&3&3\\\hline
-Vertical Chromaticity & $\xi_y\approx L^*/\beta^*$&46&7300/9400&43000&50000\\\hline
+\begin{tabular}{l|c||c|c|c}\hline
+Parameter & Symbol & ILC & CLIC 500 GeV& CLIC 3 TeV\\\hline\hline
+Distance from IP to QD0 [m] & $L^*$& 3.5/4.5 & 4.3 & 3.5\\
+Vertical $\beta$ at the IP [mm] &$\beta_y^*$& 0.48 & 0.1&0.07\\
+Energy Spread [$10^{-3}$]& $\delta$&3&3&3\\\hline
+Vertical Chromaticity & $\xi_y\approx L^*/\beta^*_y$&7300/9400&43000&50000\\\hline
 % Luminosity &$L$& $10^{34}$ &$1.57\times10^{34}$ & $2.3\times10^{34}$&$5.9\times10^{34}$\\\hline
-\end{tabular}\caption{Approximative vertical chromaticity for the three current linear collider projects. LHC is added for comparison.}\label{t:lum_rad}
+\end{tabular}\caption{Approximative vertical chromaticity for the three current linear collider projects.}\label{t:lum_rad}
 \end{table}
 \subsection{Non-local correction}
-The non-local correction scheme \cite{Brown:1988} compensates upstream the chromaticity in the Final Doublet (FD). Two pairs of sextupoles are used in horizontally dispersive regions ($\eta_x\neq0$) to compensate the particles path difference with respect to energy. They are matched to cancel geometrical components one to another by the -I transport map. Fig. (\ref{f-Non-local}) shows schematically the lattice configuration, where QF1 and QD0 constitute the FD, B0 to B5 are dipole magnets to produce horizontal dispersion, SD and SF sextupoles are used to cancel vertical and horizontal chromaticity respectively.\par
+The non-local correction scheme \cite{Brown:1988} compensates upstream the chromaticity in the Final Doublet (FD). Two pairs of sextupoles are used in horizontally dispersive regions ($\eta_x\neq0$) to compensate the particles path difference with respect to energy, explained in Section \ref{f:chrom}. They are matched to cancel geometrical components one to another by the -I transport map. Fig. (\ref{f-Non-local}) shows schematically the lattice configuration, where QF1 and QD0 constitute the FD, B0 to B5 are dipole magnets to produce horizontal dispersion, SD and SF sextupoles are used to cancel vertical and horizontal chromaticity respectively.\par
 \begin{figure}[!htb]
    \centering
    \includegraphics*[scale=0.13,angle=0]{nonlocalcorr.pdf}
@@ -221,6 +210,7 @@ Two possible solutions are foreseen at the moment : cancel the map components $T
 \end{figure}
  
  \subsection{Conclusion}
-The non-interleaved lattice proposal has been conceived as an alternative to the local and non-local chromaticity correction methods. The added horizontal and vertical chromaticity has been minimized by using a distance from QD0 to QF1 approximately one and to times the distance between QD0 and the IP. Also, a general geometrical cancellation has been used to give more flexibility to the linear lattice design, however the large beta functions close to the FD impose high precision in the phase advance betweeen sextupole elements.\par
+The non-interleaved lattice proposal has been conceived as an alternative to the local and non-local chromaticity correction methods. The added horizontal and vertical chromaticity has been minimized by using a distance from QD0 to QF1 approximately one and two times the distance between QD0 and the IP. Also, a general geometrical cancellation has been used to give more flexibility to the linear lattice design, however the large beta functions close to the FD impose high precision in the phase advance betweeen sextupole elements.\par
 The non-interleaved design for CLIC 500 GeV has been diagnosed using MAD-X and MAPCLASS2, concluding that the second order dispersion must be cancelled before the FD because of the high gradient sextupole before QD0 used to cancel geometrical components only.\par
-Two solutions are foreseen : the cancellation of the second order dispersion and its derivative before the FD, or alternatively generate dispersion in the FD to cancel the residual second and third order components.\par
+Two solutions are foreseen : the cancellation of the second order dispersion and its derivative before the FD, or alternatively generate dispersion in the FD to cancel the residual second and third order components making it similar to the local correction.\par
+Cancellation could be achieved by introducing an additional horizontal focal point upstream with no dispersion and no sextupole, this will increase the amount of total horizontal chromaticity, thereby changing the SF2 and SF3 sextupole strengths without changing the quads in the dispersive region, and enabling perhaps a better cancellation of T166 generated by the quad and sextupole in the dispersive part.% Playing with the magnitudes of the $\beta_x$ peaks at SF3 and SF2 will also change the amount of chromaticity to be corrected, but will not be efficient to improve the cancellation, as both terms (from the quads and SF2) will vary together.
