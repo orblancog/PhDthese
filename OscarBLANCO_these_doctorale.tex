@@ -56,8 +56,8 @@
 \date{03/07/2015}
 %You define the commission member list using \addcommissionmember (mandatory) with an optional role (eg: president, supervisor, etc...)
 \addcommissionmember[Directeur de thèse]{Directeur de Recherche}{Philip}{Bambade}
-\addcommissionmember[Codirecteur de thèse]{Physicien au CERN}{Rogelio}{Tomás}
-\addcommissionmember[Président du Jury]{Professeur}{Achille}{Stocchi}
+\addcommissionmember[Co-encadrant]{Physicien au CERN}{Rogelio}{Tomás}
+\addcommissionmember[Examinateur]{Professeur}{Achille}{Stocchi}
 \addcommissionmember[Rapporteur]{Professeur}{Jean-Marie}{De Conto}
 \addcommissionmember[Rapporteur]{Professeur Associé}{Nobuhiro}{Terunuma}
 \addcommissionmember[Examinateur]{Professeur Associé}{Toshiaki}{Tauchi}
@@ -118,16 +118,8 @@
 %########################################################################
 \part{The Linear Colliders}
 \input{LCpurpose.tex}
-\chapter{Linear Collider Concepts}
-\section{Luminosity}
-\section{Optics}
-\section{Beam Delivery System (BDS)}
-\section{Final Focus Sections (FFS)}
 \input{FFSoverview.tex}
-\chapter{Current Linear Collider Projects}
-\section{International Linear Collider (ILC)}
-\section{Compact Linear Collider (CLIC)}
-The first chapter...???
+\input{LinearColliders.tex}
 %########################################################################
 % Second part
 %########################################################################
@@ -142,16 +134,8 @@ The first chapter...???
 % \part{The Accelerator Test Facility (ATF/ATF2)}
 \part{BPMs at the ATF2 Interaction Point (IPBPMs)}
 \input{ATF2relevance.tex}
-\input{BPMsIntro.tex}
+% \input{BPMsIntro.tex}
 \input{BPMsSystem.tex}
-\chapter{BPM Signals data analysis method}
-\section{Position scans}
-\section{Angle scans}
-\section{Jitter acquisitions}
-\chapter{Installation}
-The first section ... ???
-\section{Vacuum chamber}
-\section{BPM movers mechanical and electrical system}
 \input{IPBPMsStatus.tex}
 %########################################################################
 % Conclusions
@@ -160,9 +144,9 @@ The first section ... ???
 \input{FinalConclusion.tex}
 \appendix
 \input{AppendixA.tex}
-%########################################################################
+% ########################################################################
 % Bibliography
-%########################################################################
+% ########################################################################
 \thispagestyle{empty}
 \strut\newpage
 \addcontentsline{toc}{chapter}{Bibliography}
