@@ -1,5 +1,5 @@
 \chapter{Oide effect}
-This part of the document addresses the radiation phenomenon called Oide effect\cite{Oide}, which sets a limit on the beam size demagnification, specially important in linear colliders because of the strong focusing required in the Final Doublet before the Interation Point (IP).\par
+This part of the document addresses the radiation phenomenon in quadrupoles called Oide effect\cite{Oide}, which sets a limit on the beam size demagnification, specially important in linear colliders because of the strong focusing required in the Final Doublet before the Interation Point (IP).\par
 First, a brief introduction to the beam size limit (Oide limit) is given, where calculations have been derived to include this radiation phenomenon in the lattice design and optimization software. The Oide effect is evaluated for the CLIC 3 TeV and CLIC 500 GeV parameters, leading to change the length of the first quadrupole before the IP, called QD0. It ends with a proposal to mitigate the impact of the Oide effect by adding correctors before and after the QD0, reducing the beam size.\par
 \section{Beam size limit}\label{Oideeffect}
 The Oide effect is caused by the interaction of charged particles with the magnetic field from quadrupoles. Radiation in a focusing magnet, schematically represented as QD0 in Fig. (\ref{f:Oideeffect}), changes the energy of the particle and modifies the focusing effect. This results in a limit on the minimum beam size specially relevant in the vertical plane.\par%For the horizontal direction, is mainly affected by radiation caused by the interaction of charged particles with the magnetic field from dipoles. %This report will be limited to sector dipoles or ``sbends''.\par
@@ -41,7 +41,7 @@ ILC  500 GeV & 40 & $\;\;$489.2 & 5.7 & 0.170 & 2.20 &4.3& 9.567 & 0.04 & 5.7 & 
 \end{table}
 
 \section{Oide Double Integral Solution}\label{s:DoubleIntegral}
-In this section the double integral used to calculate $F$ is solved with the goal to increase the computational calculation speed. It was included in MapClass2\cite{Mapclassorig,Mapclass,Mapclass2,githubMapClass2} to be used in lattice design and optimization\par
+In this section the double integral used to calculate $F$ is solved with the goal to increase the computational calculation speed. It was included in MapClass2\cite{Mapclassorig,Mapclass,Mapclass2,githubMapClass2} to be used in lattice design and optimization.\par
   The inner integral over $\phi'$ can be solved because it has a known primitive.
 \begin{equation}
  \int_0^\phi (\sin \phi'+ \sqrt{k}l^*\cos\phi')^2d\phi'=\frac{\phi}{2}[(\sqrt{k}l^*)^2 +1 ] + \frac{\sin(2\phi)}{4}[(\sqrt{k}l^*)^2 -1]+\sqrt{k}l^*\sin^2\phi
@@ -77,11 +77,11 @@ The primitive $\mathscr{F}$ exists and it has been calculated using Maxima \cite
 \section{Mitigating the impact on the beam size}
 \subsection{QD0 length}
 As shown in Sect. \ref{Oideeffect} the Oide beam size contribution depends on a combination of beam and optics parameters. %Table \ref{tabSigmas} gives the results.
-If none of the beam parameters is to be changed then $F$ can be used as a figure of merit of the optics as it is calculated only from $k$, $L$ and $l^*$. The target is to reduce it as much as possible and two energy cases are analyzed: 3 TeV ($l^*=3.5$ m) and 500 GeV ($l^*=4.3$ m).\par
+If none of the beam parameters is to be changed then $F$ can be used as a figure of merit of the optics as it is calculated only from $k$, $L$ and $l^*$. The target is to reduce it as much as possible. Two energy cases are analyzed in the following: 3 TeV ($l^*=3.5$ m) and 500 GeV ($l^*=4.3$ m).\par
 Columns $\sigma_0$, $\sigma_{oide}$ and $F$ in Table \ref{t:Sigmas} show that CLIC 3 TeV and 500 GeV \cite{CLICdes,TomasCLIC} have larger contributions to beam size even having a lower $F$ value than ILC 500 GeV \cite{ILCdes}.\par
-In order to evaluate the minimum possible $F$ for $L$ and $l^*$ given, the minimum $k$ required to get the particles focused is when the Twiss function $\alpha$ is zero just at the quadrupole opposite face to the IP.\par
-Fig. \ref{fig-3TeV:a}  shows the ratio squared between the beam size contribution due to Oide effect and the linear beam size for three cases: when $k$ is the minimum required to get particles focused (to get $\alpha_y=0$ at QD0 opposite side to the IP), when $k$ is calculated as thin lens ($k=\frac{1}{Ll^*}$), and the current QD0 status. Fig. \ref{fig-3TeV:b} shows the $k$ values for the previous mentioned cases.\par
-The Oide contribution to beam size is of the same order of the linear beam size. It might be possible to reduce it by doubling the current quad length and using a less conservative $k$ between the minimum required for the focusing and the thin lens approximation. This also points to increasing the lattice length as this change reduces the tolerance to variations of $\alpha$ at the quadrupole input.\par
+In order to evaluate the minimum possible $F$ for $l^*$ given, the minimum $k$ required to get the particles focused is when the Twiss function $\alpha$ is zero just at the quadrupole opposite face to the IP.\par
+Figure \ref{fig-3TeV:a}  shows the ratio squared between the beam size contribution due to Oide effect and the linear beam size for three cases: when $k$ is the minimum required to get particles focused (to get $\alpha_y=0$ at QD0 opposite side to the IP), when $k$ is calculated as thin lens ($k=\frac{1}{Ll^*}$), and the current QD0 status. Fig. \ref{fig-3TeV:b} shows the $k$ values for the previous mentioned cases.\par
+The Oide contribution to beam size is of the same order of the linear beam size. It might be possible to reduce it by doubling the current quad length and using a lower $k$ between the minimum required for the focusing and the thin lens approximation. This also points to increasing the lattice length as this change reduces the tolerance to variations of $\alpha$ at the quadrupole input.\par
 Quad lengths larger than 10 m do not lead to further improvements with the current parameters.\par
 
 \begin{figure}[!htb]
@@ -97,7 +97,7 @@ Quad lengths larger than 10 m do not lead to further improvements with the curre
 \end{subfigure}
 \caption{Oide effect beam size contribution for CLIC 3 TeV design parameters. (a) $\sigma^2_{oide}$ normalized to designed linear beam size as a function of quad length for the minimum focusing $k$ (when $\alpha_y=0$ at the quadrupole opposite side to the IP), for $k$ calculated as thin lens ($k=\frac{1}{Ll^*}$) and the current QD0. (b) $k$ in the three previous cases for comparison.}\label{fig-3TeV}	
  \end{figure}\par
-Fig. \ref{fig-500GeV} is the corresponding to Fig. \ref{fig-3TeV} for the 500 GeV case. The current design contributes less than 4\% of the total beam size, concluding that the current QD0 length with the CLIC 500 GeV parameters does not need adjustment.\par
+Figure \ref{fig-500GeV} is the corresponding to Fig. \ref{fig-3TeV} for the 500 GeV case. The current design contributes less than 4\% of the total beam size, concluding that the current QD0 length with the CLIC 500 GeV parameters does not need adjustment.\par
 \begin{figure}[!htb]
 \centering
 \hspace*{-0.6cm}
@@ -124,7 +124,7 @@ Although the average radiation effect is zero, $\langle \Delta y \rangle = 0$ be
  \langle\Delta y,y'_0\rangle = \frac{2}{3}r_e\gamma^3G(\sqrt{K}L,\sqrt{K}L^*)(y'_0)^3\label{eq:deltamean}
 \end{equation}
 %$r_e$ is the clasical electron radius and 
-where $G(\sqrt{K}L,\sqrt{K}L^*)$ is
+where $G(\sqrt{K}L,\sqrt{K}L^*)$ is given by
 \begin{equation}
 \int_0^{\sqrt{K}L}(\sin\phi+\sqrt{K}L^*\cos\phi)^2\int_0^\phi (\sin\phi'+\sqrt{K}L^*\cos\phi')^2 d\phi'd\phi
 \end{equation}
@@ -133,22 +133,22 @@ Fig. \ref{f:correlation} shows the comparison between the correlation obtained f
 \centering
 \includegraphics[scale=0.3,angle=-90]{plotdyrad.pdf}\caption{Correlation between the phase space coordinates $\Delta y,y'$ for CLIC 3 TeV from particle tracking and theoretical expression in Eq. (\ref{eq:deltamean}).}\label{f:correlation}
 \end{figure}
-This correlation could be removed from the beam size by a set of correctors to be presented in next Section.
+This correlation could be removed from the beam size by a set of octupolar correctors to be presented in next Section.
 \subsubsection{Correctors}
-A pair of correctors, as in Fig. \ref{f:corrector}, is added to the strong focusing in order to mitigate the radiation effect. Particles that did not radiate along QD0 receive kicks in C1 and C0 cancelling one another. However, the C1 and C0 kicks do not cancel for particles that did radiate, this difference is used to correct only the particles trajectory change due to radiation.\par
-The procedure consists in scan the best position and multipole gradient ($s,k_i$) for C0, and then set C1 at QD0 input to cancel the effect of C0. If two points with same $\beta_y/\beta_x$ ratio are chosen, then the mutual cancellation of C1 and C0 correctors is limited only by the phase advance between them \cite{PhysRevSTAB.8.104002}. Figure \ref{f:betaratio} shows the horizontal and vertical $\beta$ functions for CLIC 3 TeV in FD region, and their ratio.\par
+A pair of correctors, placed as in Fig. \ref{f:corrector}, is added to the strong focusing in order to mitigate the radiation effect. Particles that did not radiate along QD0 receive kicks in C1 and C0 cancelling one another. However, the C1 and C0 kicks do not cancel for particles that did radiate, this difference is used to correct only the particles trajectory change due to radiation.\par
+The procedure consists in scaning the best position and multipole gradient ($s,k_i$) for C0, and then set C1 at QD0 input to cancel the effect of C0. If two points with same $\beta_y/\beta_x$ ratio are chosen, then the mutual cancellation of C1 and C0 correctors is limited only by the phase advance between them \cite{PhysRevSTAB.8.104002} and angle dispersion in the general case. Figure \ref{f:betaratio} shows the horizontal and vertical $\beta$ functions for CLIC 3 TeV in FD region, and their ratio.\par
 The equal $\beta_y/\beta_x$ ratio for C0 and C1 condition is difficult to fulfill because C0 should be too close to the IP. In addition, it will lead to correctors running at very high strengths perturbing the beam.\par
 A second approach is to minimize the phase advance between correctors. Therefore they will be located on both faces of QD0. This has the advantage of correctors running at lower strengths thanks to large $\beta$ functions.\par
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=0.3,angle=0]{Oide2.pdf}\caption{For the nominal trajectory in blue, the kick in C1 must cancel the kick in C0. For all particles that radiate in red, the difference in kicks should cancel $\Delta y$.}\label{f:corrector}
+\includegraphics[scale=0.5,angle=0]{Oide2.pdf}\caption{For the nominal trajectory in blue, the kick in C1 must cancel the kick in C0. For all particles that radiate in red, the difference in kicks should cancel $\Delta y$.}\label{f:corrector}
 \end{figure}
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=0.3,angle=-90]{lattice_CLIC_3TeVFD-crop.pdf}\caption{$\beta$ functions and $\beta_y/\beta_x$ ratio for CLIC 3 TeV FD, QF1 and QD0 in red on top. The dark area is occupied by QD0 and the IP is at $s=0$.}\label{f:betaratio}
+\includegraphics[scale=0.45,angle=-90]{lattice_CLIC_3TeVFD-crop.pdf}\caption{$\beta$ functions and $\beta_y/\beta_x$ ratio for CLIC 3 TeV FD, QF1 and QD0 in red on top. The dark area is occupied by QD0 and the IP is at $s=0$.}\label{f:betaratio}
 \end{figure}
 Two octupoles (OD0,OD1) were tried as correctors (C0,C1) to substract the cubic fit. A CLIC 3 TeV nominal beam with no energy spread is generated at the IP and tracked back to the entrance of the C1 without radiation with both correctors off. This beam is used to study the Oide effect mitigation in QD0 using correctors by tracking to the IP with radiation.\par
-The best result obtained with the octupole correctors is a vertical beam size reduction by $(-4.3\pm0.2)$\% using OD0 only. Table \ref{t:correctors} show the result of luminosity changes less than 10\% for the case with no radiation in QD0, with radiation, with one corrector and with the two correctors obtained with Guinea Pig ++ \cite{Schulte:382453}.\par
+The best result obtained with the octupole correctors is a vertical beam size reduction by $(-4.3\pm0.2)$\% using OD0 only. Table \ref{t:correctors} shows the result of luminosity changes less than 10\% for the case with no radiation in QD0, with radiation, with one corrector and with the two correctors obtained with Guinea Pig ++ \cite{Schulte:382453}.\par
 \begin{table}[!hbt]
 \centering
 \scriptsize
@@ -159,12 +159,12 @@ NO RAD & 0.01 & 0 & 0.01 & 0 & 47.45 & 0.69 & 7.7 & 2.9\\
 RAD    & 0.01 & 0 & 0.01 & 0 & 47.45 & 1.18 & 7.5 & 2.7 \\
 RAD    & 0.01 & 0 & 0.01 & -3900 & 47.45 & 1.13 & 7.4 & 2.7 \\
 RAD    & 0.01 & 1502 & 0.01 & -3900 & 47.45 & 1.17 & 7.1 & 2.7 \\\hline
-NO RAD & 0.01 & 0 & 0.01 & -3900 & 47.42 & 0.77 & - & -\\
-NO RAD & 0.01 & 1502 & 0.01 & -3900 & 47.42 & 1.23 & - & -\\\hline
+% NO RAD & 0.01 & 0 & 0.01 & -3900 & 47.42 & 0.77 & - & -\\
+% NO RAD & 0.01 & 1502 & 0.01 & -3900 & 47.42 & 0.75 & - & -\\\hline
 \end{tabular}\caption{Effect of octupolar correctors on the beam size, total luminosity and peak luminosity.}\label{t:correctors}
 \end{table}
-The Oide effect contribution to vertical beam size affects very little the luminosity, and it is the same case when using OD0 corrector. However, the case of two correctors OD1 and OD0 shows a drop. This has been attributed to the limited cancellation between correctors due to different $\beta_y/\beta_x$ ratio and phase advance.\par
-The possibility of slicing QD0 in two or three sections and mitigate the radiation effect with a pair of octupoles on each/any slice has been forseen to improve the matching betweeen C0 and C1 correctors.\par
+The Oide effect contribution to vertical beam size affects very little the luminosity. The single corrector option., OD0, does not show any improvement in peak luminosities. However, the case of two correctors OD1 and OD0 shows a drop in the total luminosity. This has been attributed to the limited cancellation between correctors due to different $\beta_y/\beta_x$ ratio and phase advance.\par
+The possibility of slicing QD0 in two or three sections and mitigate the radiation effect with a pair of octupoles on each/any slice could be studied.\par
 \subsection{Conclusions}
 Radiation in the final quad sets a limit on the vertical beamsize, this is called Oide effect. Only for CLIC 3 TeV this limit is significant, therefore two possibilities have been explored to mitigate its contribution to beam size: double the length and reduce the QD0 gradient, or the integration of a pair of octupoles before and after QD0.\par
-The best result with octupoles has been a vertical beam size reduction of $(4.3\pm0.2)$\%, with little impact on luminosity. The correction scheme is currently limited by the phase advance and $\beta_y/\beta_x$ ratio. It may be possible to improve its performance by slicing QD0.\par
+The best result with octupoles demonstrated vertical beam size reduction of $(4.3\pm0.2)$\%, with little or negative impact on luminosity. The correction scheme is currently limited by the phase advance and $\beta_y/\beta_x$ ratio between correctors. It may be possible to improve its performance by slicing QD0.\par
