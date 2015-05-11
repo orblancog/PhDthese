@@ -407,9 +407,9 @@
 %       UMR8607\\%
       Le Centre Scientifique d'Orsay, B\^atiment 200 BP 34\\%
       \numprint{91898} Orsay CEDEX, France\\%
-      \vspace*{0.4cm}\\%
+      \vspace*{0.5cm}\\%
       financ\'e par,\\%
-      \vspace*{0.4cm}\\%
+      \vspace*{0.5cm}\\%
       \textbf{Centre National de la Recherche Scientifique (CNRS)}\\%
 %       et,\\%
       \textbf{Organisation Europ\'eenne pour la Recherche Nucl\'eaire (CERN)}\\%
