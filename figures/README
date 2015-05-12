@@ -1,0 +1,3 @@
+cp ~/Public/lab/CERN/docs/reports/rep02/fig01.pdf .
+cp ~/Public/lab/KEK/acc/atf2/BPM/IPBPM/docs/manuals/BPMs_positioning_system/figures/scalefactors.jpg  figures/
+cp /home/orblancog/Public/acc/CLIC/test/v_10_10_11/newbds.twiss CLIC3TeVnewbds.twiss 
