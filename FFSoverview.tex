@@ -30,6 +30,7 @@ The chromatic dilution of the beam size can be expressed as
  \sigma^*_y\approx\sigma_{y,0}\sqrt{1+\xi_y^2\sigma^2_\delta}
 \end{equation}
 where $\sigma_{y,0}$ is the transverse beam size with zero energy spread.\par
+\subsubsection{Chromaticity correction}\label{s:chromcorr}
 In the thin lens approximation with a vertically focusing quadrupole magnet of thickness $ds$, the kick in angle given to a crossing particle is expressed in \cite{CAS9104} as
 \begin{equation}
  dx'=k_q(1-\delta)xds\qquad dy'=-k_q(1-\delta)yds
@@ -46,7 +47,20 @@ Then, sextupoles are located in dispersive regions ($\eta_x\neq0$) to kick the p
  \text{Sextupole:}&\qquad dx'=\frac{1}{2}k_s[(x_\beta+\eta_x\delta)^2+y_\beta^2]ds\qquad& dy'=&-k_s(x_\beta+\eta\delta)y_\beta ds\notag
 \end{align}
 The combination of bending magnets and sextupoles location and strengths are part of the lattice design. Two methods have been develop to achieve the cancellation of all second order terms in the transfer map: the non-local chromaticity correction and the local chromaticity correction.\par
-
+\textbf{Non-local correction:}~The non-local correction scheme \cite{Brown:1988} compensates upstream the chromaticity in the Final Doublet (FD). Two pairs of sextupoles are used in horizontally dispersive regions ($\eta_x\neq0$) to compensate the particles path difference with respect to energy, explained in Section \ref{f:chrom}. They are matched to cancel geometrical components one to another by the -I transport map. Fig. (\ref{f-Non-local}) shows schematically the lattice configuration, where QF1 and QD0 constitute the FD, B0 to B5 are dipole magnets to produce horizontal dispersion, SD and SF sextupoles are used to cancel vertical and horizontal chromaticity respectively.\par
+\begin{figure}[!htb]
+   \centering
+   \includegraphics*[scale=0.2,angle=0]{nonlocalcorr2.pdf}
+   \caption{Non-local chromaticity correction.}
+   \label{f-Non-local}
+\end{figure}
+\textbf{Local correction:}~The local chromaticity correction scheme \cite{Raimondi:2000} compensates chromaticity inside the FD and Fig. (\ref{f-local}) shows the sextupoles locations. Horizontal dispersion is generated in the FD to cancel second order dispersion and twice the chromaticity at the IP by matching the horizontal and vertical sextupoles gradients in the FD. For this reason,  chromaticity is created once more upstream in a non-dispersive region. An additional sextupole per plane is required to cancel only geometrical contributions to beamsize. As the vertical and horizontal corrections share the lattice section, this leads to a more compact design.\par
+\begin{figure}[!htb]
+   \centering
+   \includegraphics[scale=0.2,angle=0]{localcorr2.pdf}
+   \caption{Local chromaticity correction.}
+   \label{f-local}
+\end{figure}
 
 \subsection{Tuning}
 When considering imperfections, the machine performance decreases dramatically, typically, the beam size increases and luminosity drops substantially about 6 orders of magnitud. The tuning is the procedure which brings the system performance to its design values. Since the initial errors are unknown, the tuning requires a statistical study. Usually more than 100 machines with randomly distributed errors are considered in computer simulations. The simulated tuning reproduces a realistic tuning procedure in a machine \cite{GarciaMorales:1982827,Minty:629879}.\par

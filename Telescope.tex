@@ -102,8 +102,9 @@ Given $L_{IM}$, the minimum added chromaticity in the FD is found when $L$ is on
 \end{figure}
 \clearpage
 
-\section{Chromaticity correction}\label{s:chromcorr}
-Large chromaticity is generated in linear colliders due to the ratio of long $L^*$ and low-$\beta^*$ values. Table~\ref{t:chromlat} shows the chromaticity in the current three main linear collider projects. Two methods have been used to cancel the chromatic effect: non-local and local correction.
+\section{The non-interleaved lattice}
+\subsection{Introduction}
+Large chromaticity is generated in linear colliders due to the ratio of long $L^*$ and low-$\beta^*$ values. Table~\ref{t:chromlat} shows the chromaticity in the current three main linear collider projects.\par
 \begin{table}[!htb]
 % \scriptsize
 \centering
@@ -116,34 +117,16 @@ Vertical Chromaticity & $\xi_y\approx L^*/\beta^*_y$&7300/9400&43000&50000\\\hli
 % Luminosity &$L$& $10^{34}$ &$1.57\times10^{34}$ & $2.3\times10^{34}$&$5.9\times10^{34}$\\\hline
 \end{tabular}\caption{Approximative vertical chromaticity for the three current linear collider projects.}\label{t:chromlat}
 \end{table}
-\subsection{Non-local correction}
-The non-local correction scheme \cite{Brown:1988} compensates upstream the chromaticity in the Final Doublet (FD). Two pairs of sextupoles are used in horizontally dispersive regions ($\eta_x\neq0$) to compensate the particles path difference with respect to energy, explained in Section \ref{f:chrom}. They are matched to cancel geometrical components one to another by the -I transport map. Fig. (\ref{f-Non-local}) shows schematically the lattice configuration, where QF1 and QD0 constitute the FD, B0 to B5 are dipole magnets to produce horizontal dispersion, SD and SF sextupoles are used to cancel vertical and horizontal chromaticity respectively.\par
+Two methods have been used to cancel the chromatic effect: non-local and local correction. The local and non-local schemes, presented in Section~\ref{s:chromcorr}, have been compared for CLIC~\cite{PhysRevSTAB.17.101001}, concluding in easier tuning capabilities for the non-local. It has been mainly attributed to the separation of the horizontal and vertical chromatic correction sections, while in the local, the horizontal and vertical correction sections are interleaved.\par
+% \subsection{The lattice}
+This Section introduces an alternative lattice. In the non-interleaved scheme, the idea is to preserve the separation in the vertical and horizontal chromatic corrections  while cancelling the geometrical components in the vertical plane at the FD. One of the paired sextupoles is inside a horizontally dispersive region while the other remains outside to cancel geometric contributions.\par
 \begin{figure}[!htb]
    \centering
-   \includegraphics*[scale=0.13,angle=0]{nonlocalcorr.pdf}
-   \caption{Non-local chromaticity correction.}
-   \label{f-Non-local}
-\end{figure}
-\subsection{Local correction}
-The local chromaticity correction scheme \cite{Raimondi:2000} compensates chromaticity inside the FD and Fig. (\ref{f-local}) shows the sextupoles locations. Horizontal dispersion is generated in the FD to cancel second order dispersion and twice the chromaticity at the IP by matching the horizontal and vertical sextupoles gradients in the FD. For this reason,  chromaticity is created once more upstream in a non-dispersive region. An additional sextupole per plane is required to cancel only geometrical contributions to beamsize. As the vertical and horizontal corrections share the lattice section, this leads to a more compact design.\par
-\begin{figure}[!htb]
-   \centering
-   \includegraphics*[scale=0.13,angle=0]{localcorr.pdf}
-   \caption{Local chromaticity correction.}
-   \label{f-local}
-\end{figure}
-Both schemes have been compared for CLIC \cite{PhysRevSTAB.17.101001}, concluding in %smaller lattice length for the local
-%scheme and 
-easier tuning capabilities for the non-local. It has been mainly attributed to knobs orthogonality because the non-local scheme has a separated section per plane, while in the local, the horizontal and vertical correction sections are interleaved.\par
-\section{The non-interleaved lattice}
-Here is the study of an alternative lattice. In the non-interleaved scheme, the idea is to preserve the separation in the vertical and horizontal chromatic corrections  while cancelling the geometrical components in the vertical plane at the FD. One of the paired sextupoles is inside a horizontally dispersive region while the other remains outside to cancel geometric contributions.\par
-\begin{figure}[!htb]
-   \centering
-   \includegraphics*[scale=0.13,angle=0]{noninterleavedcorr.pdf}
+   \includegraphics*[scale=0.2,angle=0]{noninterleavedcorr2.pdf}
    \caption{Non-interleaved chromaticity correction.}
    \label{f-noninterleaved}
 \end{figure}
- Horizontal dispersion is generated over a common region and it is cancelled upstream, before the FD. Fig. (\ref{f-noninterleaved}) shows QD0 preceded by a sextupole SD0, which is matched with a second SD1 by the -I transport map. The same configuration is used to cancel horizontal chromaticity in an upstream section of the lattice using SF sextupoles.\par
+ Horizontal dispersion is generated over a common region and it is cancelled upstream, before the FD. Figure~\ref{f-noninterleaved} shows QD0 preceded by a sextupole SD0, which is matched with a second SD1 by the -I transport map. The same configuration is used to cancel horizontal chromaticity in an upstream section of the lattice using SF sextupoles.\par
 
  \subsection{Geometric Terms Cancellation}
 Previously mentioned chromatic correction schemes use a pair of matched sextupoles to cancel one another geometrical components. It is generally noted as the -I transformation. However, results from \cite{PhysRevSTAB.8.104002} show that the -I transformation is one particular solution. When having a pair sextupoles as in Fig. (\ref{f:sext}) joined by a transport matrix $T_{12}$, the general solution is $t_{12}=0$, $t_{34}=0$, $t_{11}t_{22}=1$, $t_{33}t_{44}=1$, $k_{s1}=-k_{s2}t_{11}$ and $t_{11}=\pm t_{33}$, where, $t_{ij}$ are the matrix elements and $k_{s1}, k_{s2}$ are the sextupole gradients. This general solution is used here to give more flexibility to the beta functions in the design. Fig. (\ref{f:phaseadv}) shows the relative phase advances required in the non-interleaved design.\par
