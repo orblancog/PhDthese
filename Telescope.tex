@@ -1,23 +1,4 @@
 \chapter{Chromaticity in the FFS}\label{s:FFS}
-In the Final Focus the goal is to minimize the beam size. If the lattice is conceived as a telescope where the matrix elements are as in Eq. (\ref{eq:telescope}), being $M_x, M_y$ the magnifications in horizontal and vertical planes, then, beam size to the first order does not depends on the energy spread $\delta$. Considering the second and third order components in the transfer map, as in Eq. (\ref{eq:tmap}), then, the telescope properties show that the main contribution to beam size is chromaticity $\xi_{x\atop y}$ given by the elements $T_{126},\,T_{346}$  \cite{Brown:1987}, identified in \cite{GarciaMorales:1982827} as\par
-\begin{equation}
- \xi_x = \frac{1}{\beta_x^*}\left(T_{116}^2\beta_{x0}+T_{126}^2\frac{1}{\beta_{x0}}\right)\qquad
- \xi_y = \frac{1}{\beta_y^*}\left(T_{336}^2\beta_{y0}+T_{346}^2\frac{1}{\beta_{y0}}\right)
-\end{equation}
-being the 0-index the values at the input and *-index the values at the output. For this reason, the Final Focus Section (FFS) has been conceived as a telescope to demagnify the beam size with minimum effect of energy spread, where the main issue is the large chromaticity generated at the Final Doublet (FD), the last pair of quadrupoles which focus the beam at the Interaction Point (IP).
-\begin{equation}
-R=
- \begin{pmatrix}
-   M_x & 0 & 0 & 0 \\
-   0 & 1/M_x & 0 & 0 \\
-   0 & 0 & M_y & 0 \\
-   0 & 0 & 0 & 1/M_y \\
-  \end{pmatrix}\label{eq:telescope}
-\end{equation}
-\begin{equation}
-x_i=\sum_{j=1}^6R_{ij}x_j+\sum_{j,k=1}^6T_{ijk}x_jx_k+\sum_{j,k,l=1}^6U_{ijkl}x_jx_kx_l+\cdots\qquad x_i\in x,x',y,y',\tau,\delta\label{eq:tmap}
-\end{equation}
-
 \section{Chromaticity minimization in the Final Doublet (FD)}
 % \section{Thin lens approximation}
 In this Section I find the Final Doublet distance that minimizes the chromaticity.\par 
@@ -129,13 +110,14 @@ This Section introduces an alternative lattice. In the non-interleaved scheme, t
  Horizontal dispersion is generated over a common region and it is cancelled upstream, before the FD. Figure~\ref{f-noninterleaved} shows QD0 preceded by a sextupole SD0, which is matched with a second SD1 by the -I transport map. The same configuration is used to cancel horizontal chromaticity in an upstream section of the lattice using SF sextupoles.\par
 
  \subsection{Geometric Terms Cancellation}
-Previously mentioned chromatic correction schemes use a pair of matched sextupoles to cancel one another geometrical components. It is generally noted as the -I transformation. However, results from \cite{PhysRevSTAB.8.104002} show that the -I transformation is one particular solution. When having a pair sextupoles as in Fig. (\ref{f:sext}) joined by a transport matrix $T_{12}$, the general solution is $t_{12}=0$, $t_{34}=0$, $t_{11}t_{22}=1$, $t_{33}t_{44}=1$, $k_{s1}=-k_{s2}t_{11}$ and $t_{11}=\pm t_{33}$, where, $t_{ij}$ are the matrix elements and $k_{s1}, k_{s2}$ are the sextupole gradients. This general solution is used here to give more flexibility to the beta functions in the design. Fig. (\ref{f:phaseadv}) shows the relative phase advances required in the non-interleaved design.\par
+Previously mentioned chromatic correction schemes use a pair of matched sextupoles to cancel one another geometrical components. It is generally noted as the -I transformation. However, results from \cite{PhysRevSTAB.8.104002} show that the -I transformation is one particular solution. When having a pair of sextupoles as in Fig.~\ref{f:sext} joined by a transport matrix $T_{12}$, the general solution is $t_{12}=0$, $t_{34}=0$, $t_{11}t_{22}=1$, $t_{33}t_{44}=1$, $k_{s1}=-k_{s2}t_{11}$ and $t_{11}=\pm t_{33}$, where, $t_{ij}$ are the matrix elements and $k_{s1}, k_{s2}$ are the sextupole gradients. This general solution is used here to give more flexibility to the beta functions in the design. 
 \begin{figure}[!htb]
    \centering
    \includegraphics*[scale=0.15,angle=0]{geo_cancel.pdf}
    \caption{Sextupoles joined by the transport matrix $T_{12}$.}
    \label{f:sext}
 \end{figure}
+Fig. (\ref{f:phaseadv}) shows the relative phase advances required in the non-interleaved design.\par
 % \subsection{Tolerances}
 Those expressions from the linear transport map set restrictions on the optic lattice parameters and tolerances during the lattice design stage. In order to evaluate those tolerances, $\Delta\phi_x, \Delta\phi_y, r_x, r_y$ have been defined as $\phi_{x12}+\Delta\phi_{x} = \pi$, $\phi_{y12}+\Delta\phi_{y} = \pi$, $ k_{s1}\beta_{x1}^{3/2}-k_{s2}\beta_{x2}^{3/2}+r_x=0$ and $k_{s1}\beta_{y1}^{3/2}-k_{s2}\beta_{y2}^{3/2}+r_y=0$ respectively, where $\Delta\phi$ is the phase advance error, $r$ is the residual after subtractions and $\phi,\beta$ are the optical parameters in horizontal $x$ and vertical $y$ planes for both sextupoles $S1$ or $S2$.\par
 \begin{figure}[!htb]
