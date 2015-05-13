@@ -1,36 +1,36 @@
 \chapter{IPBPMs Movers}\label{s:annexB}
 \section{System Description}
-At the ATF2 IP, inside the vacuum chamber, the BPMs positioning system has been installed during the first two weeks of July 2013. It moves two independent blocks: Block IPAB and Block IPC. Each block has three degrees of freedom: vertical, lateral and pitch angle, by using using 4 piezo-movers: three vertical and one horizontal.\par
+At the ATF2 IP region, inside the vacuum chamber, the BPMs positioning system has been installed during the first two weeks of July 2013. It moves two independent blocks: Block IPAB and Block IPC. Each block has three degrees of freedom: vertical, lateral and pitch angle, using using four piezo-movers per block: three vertical and one horizontal.\par
 Movers made by the german company ``PI'' electronics moves IPC and the french company ``Cedrat Technologies'' moves IPAB.\par
 \subsection{The Piezo Movers}
 Piezo mover changes its position as a function of voltage. Each one of the eight movers has its own control electronics block composed of: 
 \begin{itemize}
- \item the mover
-\item the strain gauge
-\item the control box (manufacturer module) to:
+ \item The piezo-mover to generate the displacement.
+\item The strain gauge, used by the control box for feedback.
+\item The control box (module provided by the manufacturer) to:
 \begin{itemize}
- \item set piezo mover voltage (high voltage)
+ \item Set piezo-mover high voltage to induce the motion of the piezo-mover.
  \begin{itemize}
 \item PI module E-621
 \item CEDRAT module LA75
 \end{itemize}
-\item read strain gauge
+\item Read strain gauge to know the piezo-mover position.
 \begin{itemize}
 \item PI module E-621 (same as control)
 \item CEDRAT module SG75
 \end{itemize}
-\item set feedback operation (ON/OFF)
-\item set control mode (external control, PLC is used for setpoint setting)
+\item Set feedback operation (ON/OFF).
+\item Set control mode: internal or external setting point. External mode is used.
 \end{itemize}
-\item PLC channel to
+\item PLC channel to:
 \begin{itemize}
-\item set voltage to displace the mover
-\item read voltage to determine mover position (with FB ON, read voltage approaches the set voltage.)
+\item Set voltage to the setting point input in the control box.
+\item Read voltage from control box output proportional to piezo-mover position.
 \end{itemize}
 \end{itemize}
 
 \subsection{Electrical connections}
-Figure \ref{f:conndiag} shows the connections diagram of electrical connections between the movers displacement system. It shows the connexion to the local network by Ethernet, the DACs and ADCs used to set and read the voltage levels, the connection to the dedicated control boxes, a linking box to match the cable conexions, the 25~m cable to connect to the vacuum chamber flanges, the movers, and temperature probes.\par
+Figure \ref{f:conndiag} shows the electrical connections diagram between the movers displacement system components. It shows the connexion to the local network by Ethernet, the DACs and ADCs used to set and read the voltage levels, the connection to the dedicated control boxes, a linking box to match the cable connectors, the 25~m cable to connect to the vacuum chamber flanges inside the ATF tunnel, the movers, and temperature probes.\par
 \begin{figure}[hbt]
 \hspace*{1.4cm}\includegraphics[angle=0,scale=0.3]{link.jpg}\caption{Piezo mover system connection diagram.}\label{f:conndiag}
 \end{figure}
@@ -58,15 +58,15 @@ Figure \ref{f:conndiag} shows the connections diagram of electrical connections 
 % \end{tikzpicture}\caption{Images from installation.}\label{f:imaginsta}
 % \end{figure}
 \subsubsection{Mover range}
-PI and Cedrat have different ranges: PI (300~um), Cedrat (250~um). The Control voltage and displacement (min-max) is opposite between companies:\par
+PI and Cedrat have different ranges: PI~300~$\mu$m, Cedrat~250~$\mu$m. The Control voltage and displacement (min-max positions) is opposite between companies:\par
 \begin{itemize}
-\item PI: 		(min)   0V   	to 	(max) 10V
-\item CEDRAT: 	(max) -1V 	to	(min)    7V
+\item PI: (min) 0~V to (max) 10~V
+\item CEDRAT: (max) -1~V to (min) 7~V
 \end{itemize}
 It is important to note that:
 \begin{itemize}
 \item The voltage-displacement relation is inverse for CEDRAT movers.
-\item When the system is OFF (0V), PI mover are at its minimum, however CEDRAT are not.
+\item When the system is OFF (0~V), PI mover are at its minimum, however CEDRAT are not.
 \end{itemize}
 \subsubsection{Mover Control}
 Figure \ref{f:movercontrol} shows an schematic of the control system per mover. The voltage value is set via an EPICS Process Variable (PV), and it is send to a DAC, the analog voltage set the control box to move the piezo-electric. The displacement is measure by a set of strain-gauges. The FB loop is closed at the Control box. A read-out voltage is taken by the ADC and publish as another PV.\par
@@ -79,7 +79,7 @@ Figure \ref{f:movercontrol} shows an schematic of the control system per mover. 
  %\node (img3) at (4.4,1.5) {{\LARGE\color{red} ?}};
 \end{tikzpicture}\caption{Control system per mover.}\label{f:movercontrol}
 \end{figure}
-{\tiny BLOCK AB 1~mV=31.25~nm, BLOCK C 1~mV=30~nm}\par
+% The DAC setpoints used:BLOCK AB 1~mV=31.25~nm, BLOCK C 1~mV=30~nm\par
 \subsubsection{Feedback and NO Feedback}
 There are two operation possibilities per mover: Feedback (fb) and No Feedback (no fb). It means 8 feedback loops. On each case the control module sets a voltage value on the mover and read the strain gauge to create a closed loop. However, their implementations are different on each company.
 \subsection{The PLC}
@@ -129,32 +129,32 @@ IP address(ATF): (31.1.1.38) ipmover-pc.ip-local\par
 Net Mask: 255.255.255.0\par
 Connected to ip-local server\par
 \subsubsection{Used Software}
-Windows 7 Fran\`cais\par
+Windows 7 Francais\par
 National Instrument - Labview 2011\par
 National Instruments - Measurement $\&$ Automation Explorer (NI MAX) 5.4\par
 Evince 2.32.0\par
 CALab (Labview + EPICS) \cite{CALab}\par
-In adition, this Software is present but not used by movers:\par
-SIOS Interferometer Software INfasNTC 6.3.1.42 2012\par
-Festo Positioning Drivers\par
-\subsubsection{Access}
-Account (Nom d'utilisateur): *******\par
-% Connect to (Se connecter \'a): NB\_SALLE101 (cet ordinateur)\par
-Password: KEKJapan2012\par
+% In adition, this Software is present but not used by movers:\par
+% SIOS Interferometer Software INfasNTC 6.3.1.42 2012\par
+% Festo Positioning Drivers\par
+% \subsubsection{Access}
+% Account (Nom d'utilisateur): *******\par
+% % Connect to (Se connecter \'a): NB\_SALLE101 (cet ordinateur)\par
+% Password: KEKJapan2012\par
 \subsubsection{Folder Content Description}\par
 Path to applications and info\par
 \verb?Bureau/Actionneurs Piezo/Applis?\par
-All applications were done in Labview. Filenames gives a hint of its content (keywords used in filenames):\par
+All applications were done in Labview. Filenames give an indication of its purpose, here are some keywords used in filenames:\par
 \begin{itemize}
 \item \verb?oscilloscope?: uses de ADC to read signals
 \item \verb?generateur?: function generator, uses de DACs to produce signals
 \item \verb?Actionneurs positionnement BPMs?: activate the system displacement
 \item \verb?Ethernet?: connected by wired network,
 \item \verb?USB?: corresponds to previous version connected by USB.
-\item \verb?Verticaux groupe?: all 3 vertical mover movers are activated by one voltage control
+\item \verb?Verticaux groupe?: all 3 vertical mover movers are activated by one only setting.
 \item \verb?mouvements identiques?: first version of BPM displacement system (PI and CEDRAT) integrated.
 \item \verb?Jauges?: stores the strain gauges info in excel format.
-\item \verb?temp?: stores temperature info in excel format.
+\item \verb?temp?: stores the strain gauges and temperature info in excel format.
 \item \verb?epics?: control from epics system, Labview works as interface.
 \item \verb?Actionneurs multicycles?: several cycles over the defined voltage range are performed
 \item \verb?Cedrat, PI?: identifies the group of movers to use.
@@ -184,25 +184,25 @@ IP:BPM-C:Temp\par
 
 \section{The BPMs}\label{s:BPMscoord}
 \subsection{Coordinate system}\par
-Each BPM has its own coordinates with respect to a reference system centered electrically as in Fig. \ref{f:BPMcoordinate}.\par
-\begin{figure}[hbt]
+Each BPM has its own coordinates with respect to a reference system centered electrically as in Fig.~\ref{f:BPMcoordinate}.\par
+\begin{figure}[h]
 \centering
-  \includegraphics[scale=0.3,angle=0]{fig23.pdf}\caption{BPM coordinate system centered ellectrically. {\color{red}Beam in red}, {\color{forestgreen} BPMs in green}.}\label{f:BPMcoordinate}
+  \includegraphics[scale=0.3,angle=0]{fig23.pdf}\caption{BPM coordinate system centered ellectrically. Beam in red, BPMs in green.}\label{f:BPMcoordinate}
 \end{figure}
-The coordinates of the beam and the BPM angle rotations are given by:
+The coordinates of the beam and the BPM angle rotations are:
 \begin{itemize}
  \item Beam Position: $x_A,y_A,z_A$, $x_B,y_B,z_B$, $x_C,y_C,z_C$
  \item BPM Angles respect to ref. system:  $\theta_{Ap},\theta_{Ar},\theta_{Ay}$, $\theta_{Bp},\theta_{Br},\theta_{By}$, $\theta_{Cp},\theta_{Cr},\theta_{Cy}$
 \end{itemize}
-All systems relate to a common \textbf{mechanical} reference system with no rotations, just translations in Fig. \ref{f:ref3BPMs}. However, IPB  could be chosen to coincide with the common to simplify the description.\par
-\begin{figure}
+All systems relate to a common mechanical reference system with no rotations, just translations in Fig.~\ref{f:ref3BPMs}. For simplification, one of the BPMs could be chosen to coincide with the common reference.\par
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.2,angle=0]{fig17.pdf}\caption{Reference system for the 3 BPMs.}\label{f:ref3BPMs}
 \end{figure}
 %\begin{columns}
 %\begin{column}{3.5cm}
-There is a set of movers to control BPM position shown in Fig. \ref{f:moverss}. This is expressed in Eq. (\ref{eq:poscorr}) where during the installation all initial values (with 0-index) are set. A mover combination can change the transverse positions and the pitch angle per block.\par
-\begin{figure}
+The set of movers to control BPM position is shown in Fig.~\ref{f:moverss}. This is expressed in Eq.~(\ref{eq:poscorr}) where during the installation all initial values (with 0-index) are set. A mover combination can change the transverse positions and the pitch angle per block.\par
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.40,angle=0]{fig25.pdf}\caption{Set of movers: M$_{01234}$ in Block IPAB and M$_{BCDE}$ in Block IPC.}\label{f:moverss}
 \end{figure}
@@ -225,18 +225,18 @@ There is a set of movers to control BPM position shown in Fig. \ref{f:moverss}. 
 % \end{column}
 %\begin{column}{5cm}
 % \includegraphics[scale=0.25,angle=0]{fig26.pdf}\par
-Figure \ref{f:moverlong} shows the location of the movers along the longitudinal direction. This information is used to calculate the aligment correction limits of the system.\par
-\begin{figure}
+Figure~\ref{f:moverlong} shows the location of the movers along the longitudinal direction. This information is used to calculate the aligment correction limits of the system.\par
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.25,angle=0]{fig29.pdf}\caption{Longitudinal position of the movers.}\label{f:moverlong}
 \end{figure}
 \subsection{Alignment adjustment}\label{s:alignadj}
-Normalizing the movers range to -1 to 1 units, as in Eq. (\ref{eq:Vnorm}), it is possible to calculate the effect of movers  displacement on the cavity position shown in Table \ref{t:aligncorr}.
+Normalizing the movers range to -1 to 1 units, as in Eq.~(\ref{eq:Vnorm}), it is possible to calculate the effect of movers  displacement on the cavity position shown in Table~\ref{t:aligncorr}.
 \begin{equation}
  M_{0123}=\frac{3-V_{0123}[\text{V}]}{4} \qquad M_{BCDE}=\frac{V_{BCDE}[\text{V}]-5}{5}\label{eq:Vnorm}
 \end{equation}
-Block IPAB movers are able to correct a maximum of $\pm1$~mrad or $\pm$125~$\mu$m, while Block IPC is able to correct $\pm2$mrad or $\pm$150~$\mu$m. Correction of IPA and IPB position is not independent, therefore, special effort is put into minimize the offset in the block IPAB.\par
-By making $y=0$ and $y_0=0$ it is also possible to find a set of movers that keeps the vertical position and changes the angle per BPM. This gives the possibility to scan sensitivity to pitch angle.\par
+Block IPAB movers are able to correct a maximum of $\pm1$~mrad or $\pm$125~$\mu$m, while Block IPC is able to correct $\pm2$mrad or $\pm$150~$\mu$m. Correction of IPA and IPB position is not independent, therefore, special effort is put into minimize the offset in the block IPAB during installation.\par
+By making $y=0$ and $y_0=0$, in Table~\ref{t:aligncorr}, it is also possible to find the ratio of of movers settings that keeps the vertical position and changes the angle per BPM. This gives the possibility to scan sensitivity to pitch angle.\par
 \begin{table}[h]
  \centering
  \begin{tabular}{c||c|c|c}\hline
@@ -244,25 +244,26 @@ By making $y=0$ and $y_0=0$ it is also possible to find a set of movers that kee
  & IPB & IPA & IPC\\\hline\hline
 $x$[$\mu$m] & $x_{0B}+{\color{magenta}125M_0}$ & $x_{0A}+{\color{magenta}125M_0}$&${x_{0C}+\color{magenta}150M_{B}}$\\
 $y$[$\mu$m]& $y_{0B}+{\color{magenta}11.2M_{1,2}+113.8M_3}$&$y_{0A}+{\color{magenta}94.8M_{1,2}+30.2M_3}$&$y_{0C}+{\color{magenta}128.0M_{CD}+22.0M_E}$\\
-$z$[mm]&$z_{0B}$&$z_{0B}-80.8$&$z_{0B}+174.2$\\
+$z$[mm]&$z_{0B}$&$z_{0A}$&$z_{0C}$\\
 $\theta_{p}$[mrad]& $\theta_{p0B}+{\color{magenta}1.03(M_3-M_{1,2})}$ & $\theta_{p0A}+{\color{magenta}1.03(M_3-M_{1,2})}$ &$\theta_{p0C}+{\color{magenta} 2.02(M_{DC}-M_E)}$\\
 $\theta_{r}$[mrad]&$\theta_{r0B}$&$\theta_{r0A}$&$\theta_{r0C}$\\
 $\theta_{y}$[mrad]&$\theta_{y0B}$&$\theta_{y0A}$&$\theta_{y0C}$\\\hline
-\end{tabular}\caption{${\color{magenta} M_{0123,BCDE}}\in[-1,1],{\color{magenta}\Delta M_{0123,BCDE}}\geq1.25\times 10^{-2}$}\label{t:aligncorr}
+\end{tabular}\caption{Movers setting to adjust position and pitch angle. $M_{0123,BCDE}\in[-1,1]$}\label{t:aligncorr}
+% \caption{$M_{0123,BCDE}\in[-1,1],{\color{magenta}\Delta M_{0123,BCDE}}\geq1.25\times 10^{-2}$}\label{t:aligncorr}
 \end{table}
-
 
 \section{Alignment}
 \subsection{Vacuum chamber}
 The goal is the alignment of the vacuum chamber with respect to external references by less than 200~$\mu$m. Below this range, the piezo-electric movers in each cavity block are used to align the cavity with respect to the beam.\par
 The beam positioning system should not interfere with the IPBSM measurements. Therefore, mechanical dimensions and weight should be restricted to those supported by the vertical optical table. This will allow to have a common reference point between the two structures.\par 
 \subsection{Effect of alignment on dynamic range}
-Dynamic range is reduced by misalignment because of the constant $I'$ and $Q'$ signals from position and angle. This should be minimize aiming to use the minimum dynamic range possible.\par
+Dynamic range is reduced by misalignment because of the constant $I'$ and $Q'$ signals from position and angle. This should be minimize aiming to use the maximum dynamic range possible in calibrations and to be near the center of the piezo-movers dynamic range, where linearity is better.\par
 However, IPA and IPB are located in a common movers system and therefore BPM position and angle can not be corrected independently. Both BPMs centers can be aligned with the beam by making an angle, but, due the cavity sensitivity to angle of 3.2~$\mu$m/mrad, the $Q'$ will substract the dynamic range available for position scans. This adds to the $Q'$ static signal per BPM and therefore it could become critical.\par
 The initial BPM installation \cite{Bambade2013} had alignment issues attributed to loose tolerances between the inner cavity surface and the external reference points \cite{Siwon2014}. During 2014, new cavities were fabricated and installed in the ATF2 line. This set of BPMs has been in use since November 2014.\par
+At present there are two methods to check the alignment:
 \begin{itemize}
- \item Position scans with $I'=0$. This is fairly simple because it only tries to find the center of the BPM without considering the $Q'$ signal. The issue is that beam angle through the IPBPMs changes and these leads to different alignment results. A typical change of 0.1~mrad in the beam trajectory by a QD0 displacement of 100~$\mu$m could change the aligment results by 25~$\mu$m from IPA to IPC. Additional $\pm10~\mu$m changes in $I'=0$ have been seen between samples. Table \ref{t:newalign} shows the horizontal and vertical alignment of the new BPMs taken in separated shifts.\par
- \item First, make $I'=0$ and then use a movers and QF7 combination to make $Q'=0$. This method is valid for $Q'$ entirely from angle. At the moment it has not been tested with the new BPMs. Table \ref{t:oldbpms} shows the vertical position results for the previous BPMs.\par
+ \item Position scans with $I'=0$. This is fairly simple because it only tries to find the center of the BPM without considering the $Q'$ signal. The issue is that beam angle through the IPBPMs changes and these leads to different alignment results. A typical change of 0.1~mrad in the beam trajectory by a QD0 displacement of 100~$\mu$m could change the aligment results by 25~$\mu$m from IPA to IPC. An incertitude of $\pm10~\mu$m in $I'=0$ has been estimated by analysing different samples in the waveforms. Table~\ref{t:newalign} shows the horizontal and vertical alignment of the new BPMs taken in separated shifts.\par
+ \item Position and angle scans to make $I'=0$ and $Q'=0$. First, make $I'=0$ and then use the BPM movers and/or QF7 movers combination to make $Q'=0$. This method is valid for $Q'$ entirely from angle. At the moment it has not been tested with the new BPMs. Table~\ref{t:oldbpms} shows the vertical position results for the previous BPMs. However, the result was corrected after the improvement of the acquisition system. Some initial results in 2013 where resolution limited due to the use of 8 bits oscilloscopes to acquire the waveforms, imposing a resolution limit of the $Q'$ measurement of 1~mrad, which is too large.\par
 \end{itemize}
 \begin{table}[h]
 \centering
@@ -317,7 +318,7 @@ The estimation of mechanical positions resolution is shown in Table \ref{mechpre
   Longitudinal ($\Delta z$) & 5 \\\hline
  \end{tabular}\caption{Position mechanical precision}\label{mechprec}
  \end{center}
-\end{table}
+\end{table}\par
 % Assuming that angles can be estimated from two coplanar points in the BPM, then, minimum resolvable angle might be within the values shown in Table \ref{angleprec}.\par
 % \begin{table}[htb]
 % \centering

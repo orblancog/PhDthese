@@ -100,7 +100,7 @@ Vertical Chromaticity & $\xi_y\approx L^*/\beta^*_y$&7300/9400&43000&50000\\\hli
 \end{table}
 Two methods have been used to cancel the chromatic effect: non-local and local correction. The local and non-local schemes, presented in Section~\ref{s:chromcorr}, have been compared for CLIC~\cite{PhysRevSTAB.17.101001}, concluding in easier tuning capabilities for the non-local. It has been mainly attributed to the separation of the horizontal and vertical chromatic correction sections, while in the local, the horizontal and vertical correction sections are interleaved.\par
 % \subsection{The lattice}
-This Section introduces an alternative lattice. In the non-interleaved scheme, the idea is to preserve the separation in the vertical and horizontal chromatic corrections  while cancelling the geometrical components in the vertical plane at the FD. One of the paired sextupoles is inside a horizontally dispersive region while the other remains outside to cancel geometric contributions.\par
+This Section introduces an alternative lattice. In the non-interleaved scheme, the idea is to preserve the separation of the vertical and horizontal chromatic corrections  while cancelling the geometrical components in the vertical plane at the FD. One of the paired sextupoles is inside a horizontally dispersive region while the other remains outside to cancel geometric contributions.\par
 \begin{figure}[!htb]
    \centering
    \includegraphics*[scale=0.2,angle=0]{noninterleavedcorr2.pdf}
@@ -110,21 +110,37 @@ This Section introduces an alternative lattice. In the non-interleaved scheme, t
  Horizontal dispersion is generated over a common region and it is cancelled upstream, before the FD. Figure~\ref{f-noninterleaved} shows QD0 preceded by a sextupole SD0, which is matched with a second SD1 by the -I transport map. The same configuration is used to cancel horizontal chromaticity in an upstream section of the lattice using SF sextupoles.\par
 
  \subsection{Geometric Terms Cancellation}
-Previously mentioned chromatic correction schemes use a pair of matched sextupoles to cancel one another geometrical components. It is generally noted as the -I transformation. However, results from \cite{PhysRevSTAB.8.104002} show that the -I transformation is one particular solution. When having a pair of sextupoles as in Fig.~\ref{f:sext} joined by a transport matrix $T_{12}$, the general solution is $t_{12}=0$, $t_{34}=0$, $t_{11}t_{22}=1$, $t_{33}t_{44}=1$, $k_{s1}=-k_{s2}t_{11}$ and $t_{11}=\pm t_{33}$, where, $t_{ij}$ are the matrix elements and $k_{s1}, k_{s2}$ are the sextupole gradients. This general solution is used here to give more flexibility to the beta functions in the design. 
-\begin{figure}[!htb]
+Previously mentioned chromatic correction schemes use a pair of matched sextupoles to cancel one another geometrical components. It is generally noted as the -I transformation. However, results from \cite{PhysRevSTAB.8.104002} show that the -I transformation is one particular solution. When having a pair of sextupoles as in Fig.~\ref{f:sext} joined by a transport matrix $T_{12}$, the general solution for geometrical cancellation is
+\begin{align}
+t_{12}=&0\notag\\
+t_{34}=&0\notag\\
+t_{11}t_{22}=&1\notag\\
+t_{33}t_{44}=&1\\
+k_{s1}=&-k_{s2}t_{11}\notag\\
+t_{11}=&\pm t_{33}\notag
+\end{align}
+where, $t_{ij}$ are the matrix elements and $k_{s1}, k_{s2}$ are the sextupole gradients. This general solution is used here to give more flexibility to the beta functions in the design. 
+\begin{figure}[h]
    \centering
    \includegraphics*[scale=0.15,angle=0]{geo_cancel.pdf}
    \caption{Sextupoles joined by the transport matrix $T_{12}$.}
    \label{f:sext}
-\end{figure}
-Fig. (\ref{f:phaseadv}) shows the relative phase advances required in the non-interleaved design.\par
-% \subsection{Tolerances}
-Those expressions from the linear transport map set restrictions on the optic lattice parameters and tolerances during the lattice design stage. In order to evaluate those tolerances, $\Delta\phi_x, \Delta\phi_y, r_x, r_y$ have been defined as $\phi_{x12}+\Delta\phi_{x} = \pi$, $\phi_{y12}+\Delta\phi_{y} = \pi$, $ k_{s1}\beta_{x1}^{3/2}-k_{s2}\beta_{x2}^{3/2}+r_x=0$ and $k_{s1}\beta_{y1}^{3/2}-k_{s2}\beta_{y2}^{3/2}+r_y=0$ respectively, where $\Delta\phi$ is the phase advance error, $r$ is the residual after subtractions and $\phi,\beta$ are the optical parameters in horizontal $x$ and vertical $y$ planes for both sextupoles $S1$ or $S2$.\par
+\end{figure}\par
+Figure~\ref{f:phaseadv} shows the relative phase advances required in the non-interleaved design.
 \begin{figure}[!htb]
    \centering
    \includegraphics*[scale=0.15,angle=0]{phase_adv.pdf}
    \caption{Phase advance in the non-interleaved lattice design.}\label{f:phaseadv}
-\end{figure}
+\end{figure}\par
+% \subsection{Tolerances}
+Those expressions from the linear transport map set restrictions on the optic lattice parameters and tolerances during the lattice design stage. In order to evaluate those tolerances, $\Delta\phi_x, \Delta\phi_y, r_x, r_y$ have been defined as
+\begin{align}
+\phi_{x12}+\Delta\phi_{x} =& \pi\\
+\phi_{y12}+\Delta\phi_{y} =& \pi\\
+k_{s1}\beta_{x1}^{3/2}-k_{s2}\beta_{x2}^{3/2}+r_x=&0\\
+k_{s1}\beta_{y1}^{3/2}-k_{s2}\beta_{y2}^{3/2}+r_y=&0
+\end{align}
+respectively, where $\Delta\phi$ is the phase advance error, $r$ is the residual after subtractions and $\phi,\beta$ are the optical parameters in horizontal $x$ and vertical $y$ planes for both sextupoles $S1$ or $S2$.\par
 Factors $\alpha_{x1}\Delta\phi_x$, $\alpha_{x2}\Delta\phi_x$, $\alpha_{y1}\Delta\phi_y$, $\alpha_{y2}\Delta\phi_y\ll1$, with $\alpha$ the optic parameter, are conditions to achieve geometrical terms cancellation. The FD requires phase advances finely matched because $\alpha$ and $\beta$ are high, and the residuals $r_x,r_y$ should be close to zero in order to cancel the second order map components in both planes at the same time. The $\beta_y/\beta_x$ ratio can be chosen to match sextupole strengths.\par
 
 \subsection{The Lattice}
