@@ -350,7 +350,7 @@
     }
     \\[1.5\bigskipamount]
     \large%
-    THES\`E DE DOCTORAT\\
+    TH\`ESE DE DOCTORAT\\
     Discipline : Physique%
     \\[1.5\bigskipamount]
     par%
