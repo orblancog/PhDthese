@@ -78,7 +78,29 @@ The second order dispersion, $k_q\eta_x\delta^2$ and $\frac{1}{2}k_s\eta_x\delta
    \caption{Local chromaticity correction.}
    \label{f-local}
 \end{figure}
-\subsection{Beamstrahlung}
+\subsection{Beamstrahlung}\label{s:beastr}
+Luminosity will depend on the bunch population 	$n_b$ (assuming an equal number of particles for both beams) and their density distribution within the bunches.\par 
+Linear colliders require to minimize the beam size at the Interaction Point (IP) of the two beams to recover the luminosity $L$ of a circular collider, while also limiting the energy loss due to beamstrahlung $\delta_{BS}$. Equation~\ref{eq:lum_rad} highlights the dependence with beam size in the tranversal planes, where $f_{rep}$ is the repetion frequency of the two particle bunches collision, $E$ is the beam energy, and $\sigma_x$ and $\sigma_y$ are the horizontal and vertical beam sizes.
+\begin{equation}
+ L \propto \frac{f_{rep}n_b^2}{\sigma_x\sigma_y}\qquad\delta_{BS}\propto\frac{n_b^2E}{(\sigma_x+\sigma_y)^2}\label{eq:lum_rad}
+\end{equation}
+
+Table~\ref{t:lum_rad} shows how the beam size is decreased in all current linear collider projects, introduced in Section \ref{s:lincoll}, to compensate lower repetition rate and charges. In addition, horizontal beam size is larger than vertical beam size to preserve luminosity while reducing the beam strahlung effect.\par
+\begin{table}[h]
+{\scriptsize
+\centering
+\begin{tabular}{l|c||c|c|c|c}\hline
+Parameter & Symbol & LHC & ILC & CLIC 500 GeV& CLIC 3 TeV\\\hline\hline
+Energy/z (TeV) & $E$& 7& 0.250 & 0.250 & 1.500\\
+Bunch population & $n_b$ &$1.15\times10^{11}$&$2\times10^{10}$&$6.8\times10^9$&$3.72\times10^9$\\
+Repetition rate [Hz] &$f_{rep}$& $11.1\times10^{3}$&5 &50&50\\
+H/V. IP beam size [nm] & $\sigma_x/\sigma_y$&$16.6\times10^{3}$&474/5.9&202/2.3&40/1\\\hline
+% E loss (Beamstrahlung) [$\Delta E/E$] &$\delta_{BS}$&-???&0.07&0.07&0.28\\
+Luminosity &$L$& $10^{34}$ &$1.57\times10^{34}$ & $2.3\times10^{34}$&$5.9\times10^{34}$\\\hline
+\end{tabular}\caption{Luminosity and beamstrahlung for the three current linear collider projects. LHC luminosity is added to compare the beam size and repetition rate from circular to linear colliders.}\label{t:beam_rad}
+}
+\end{table}
+
 \subsection{Hourglass effect}
 Since the $\beta$-functions have their minimum at the IP and increase with the longitudinal distance, to consider the beam size constant along the whole collision length is some cases is not a good approximation. In a low-$\beta$ region 
 \subsection{Crossing angle}
