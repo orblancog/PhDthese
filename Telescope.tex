@@ -144,18 +144,18 @@ respectively, where $\Delta\phi$ is the phase advance error, $r$ is the residual
 Factors $\alpha_{x1}\Delta\phi_x$, $\alpha_{x2}\Delta\phi_x$, $\alpha_{y1}\Delta\phi_y$, $\alpha_{y2}\Delta\phi_y\ll1$, with $\alpha$ the optic parameter, are conditions to achieve geometrical terms cancellation. The FD requires phase advances finely matched because $\alpha$ and $\beta$ are high, and the residuals $r_x,r_y$ should be close to zero in order to cancel the second order map components in both planes at the same time. The $\beta_y/\beta_x$ ratio can be chosen to match sextupole strengths.\par
 
 \subsection{The Lattice}
-Using the CLIC 500 GeV parameters listed in \ref{t:CLIC500GeVnoninterleaved}, new lattices were designed in MAD-X \cite{MADX} following the previous considerations and those in \cite{Seryi-Raimondi2}. Fig. (\ref{f:MAD-X}) is an example. Phase advances have been matched to $10^{-6}$ precision due to high $\alpha$ values in the FD. MAPCLASS2 \cite{Mapclassorig,Mapclass,Mapclass2,githubMapClass2} gives vertical beam size of 1.9nm and horizontal beam size of 186nm to the first order.\par
+Using the CLIC 500 GeV parameters listed in Table~\ref{t:CLIC500GeVnoninterleaved}, new lattices were designed in MAD-X~\cite{MADX} following the previous considerations and those in~\cite{Seryi-Raimondi2}. Figure~\ref{f:MAD-X} is an example. Phase advances have been matched to $10^{-6}$ precision due to high $\alpha$ values in the FD. MAPCLASS2~\cite{Mapclassorig,Mapclass,Mapclass2,githubMapClass2} gives vertical beam size of 1.9nm and horizontal beam size of 186nm to the first order.\par
 \begin{table}[!htb]
 \centering
- \begin{tabular}{|l|c|}\hline
-  \textbf{Parameter [Units]} & \textbf{Value}\\\hline
+ \begin{tabular}{l|c}\hline
+  \textbf{Parameter, Symbol, [Units]} & \textbf{Value}\\\hline\hline
 %   Length (linac exit to IP distance/side [m]) & 1750\\
-  Maximum energy/beam [TeV] & 0.25\\
-  Distance from IP to first quad, $L^*$ [m] & 4.3\\
+  Maximum energy/beam, $E$, [TeV] & 0.25\\
+  Distance from IP to first quad, $L^*$, [m] & 4.3\\
 %   Crossing angle at the IP [mrad] & 18.6\\
   Nominal core beam size at IP, $\sigma^*$, $x/y$ [nm] & 202/2.3\\
 %   Nominal beam divergence at IP, $\theta^*$, $x/y$ [$\mu$rad] & 25/23\\
-  Nominal beta-function at IP, $\beta^*$, $x/y$ [mm] & 8/0.1\\\hline
+  Nominal beta-function at IP, $\beta^*_x,\beta^*_y$, [mm] & 8/0.1\\\hline
 %   Nominal bunch length, $\sigma_z$ [$\mu$m] & 72\\
 %   Nominal disruption parameters, $D$, $x/y$ & 0.1/12\\
 %   Nominal bunch population, $N$ & $6.8\times10^9$\\
@@ -172,7 +172,7 @@ Using the CLIC 500 GeV parameters listed in \ref{t:CLIC500GeVnoninterleaved}, ne
    \caption{Non-interleaved lattice design for CLIC 500 GeV. Dipoles in blue, horizontally focusing quadrupoles in red and above the axis, vertically focusing quadrupoles in red and below the axis, and sextupoles in black.}
    \label{f:MAD-X}
 \end{figure}
-However, Fig. (\ref{f-beamsize}) shows that the horizontal beam size increases slightly to second order and by more than an order of magnitude when third order components in the map are considered.\par
+However, Fig.~\ref{f-beamsize} shows that the horizontal beam size increases slightly to second order and by more than an order of magnitude when third order components in the map are considered.\par
 \begin{figure}[!htb]
    \centering
    \hspace*{-0.6cm}
@@ -180,7 +180,7 @@ However, Fig. (\ref{f-beamsize}) shows that the horizontal beam size increases s
    \caption{Beam size at the IP of the CLIC 500 GeV non-interleaved design as a function of transfer map order obtained with MAD-X PTC.}
    \label{f-beamsize}
 \end{figure}
-The reason to this beam size growth is the second order dispersion ($T_{166}$) in the sextupole inside the FD, see Fig. (\ref{f-latticeT166}). As opposed to the local chromaticity method were $T_{166}$ is cancelled only at the IP by matching the sextupoles and dispersion function, here, the second order dispersion generates higher order components due to the sextupole inside the FD used for geometrical cancellation. This is not present in the non-local method because there is no sextupole in the FD.\par
+The reason to this beam size growth is the second order dispersion ($T_{166}$) in the sextupole inside the FD, see Fig.~\ref{f-latticeT166}. As opposed to the local chromaticity method were $T_{166}$ is cancelled only at the IP by matching the sextupoles and dispersion function, here, the second order dispersion generates higher order components due to the sextupole inside the FD used for geometrical cancellation. This is not present in the non-local method because there is no sextupole in the FD.\par
 Two possible solutions are foreseen at the moment : cancel the map components $T_{166}$ and $T_{266}$ before the FD, or alternatively tolerate some dispersion in the FD to cancel the second order map and making it similar to the local method.\par
 \begin{figure}[!htb]
    \centering

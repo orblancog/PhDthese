@@ -1,4 +1,4 @@
-\documentclass[logos,hyperref,mainlanguage=english,morelanguage=french]{my-orsay-thesis}
+\documentclass[logos,hyperref,mainlanguage=french,morelanguage=english]{my-orsay-thesis}
 %Text encoding and fonts
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
@@ -45,11 +45,10 @@
 % Title page
 %########################################################################
 \author{Oscar Roberto \textsc{BLANCO GARCÍA}}
-\title{Beam dynamics in the final focus of the CLIC future linear collider project}
-\title[english]{Dynamique du faisceau dans las section finale de focalisation du futur collissionneur linéaire}
-\keywords{Some keywords}
-%Keywords for other languages languages
-% \keywords[english]{Blabla, blabla, blabla, blabla, blabla, blabla, blabla}
+\title[english]{Beam dynamics in the final focus section of the future linear collider}
+\title{Dynamique des faisceaux dans la section finale de focalisation du futur collissionneur linéaire}
+\keywords{Collisionneur de leptons, accelerateur lin\'eaire, Section Finale de Focalisation (FFS), Point d'Interaction (IP), M\'ethode de correction de la chromaticit\'e non-entrelac\'e, \`effet Oide, rayonnement synchrotronique, aimanes dipolaires, ATF2, CLIC, ILC, IPBPMs, stabilisation du faisceau, monitor de position du faisceau (BPM)}
+\keywords[english]{Lepton collider, linear accelerator, Final Focus Section (FFS), Interaction Point (IP), non-interleaved chromaticity correction, Oide effect, synchrotron radiation, bending magnets, ATF2, CLIC, ILC, IPBPMs, beam stabilization, Beam Position Monitor (BPM)}
 %Order number of the thesis
 \ordernumber{xxxx}
 %Date of defense
@@ -73,22 +72,28 @@
 % Multilingual abstracts
 %########################################################################
 %French abstract:
-\begin{abstract}
-\input{theabstract}[english]
-\end{abstract}
-%Horizontal rule
-\noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
-%English abstract:
-\begin{abstract}
+% \pagebreak\strut\newpage
+% \begin{abstract}[english]
+% % \input{theabstractfr.tex}
+% \noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
+% % \pagebreak\strut\newpage
+% \pagebreak
 \input{theabstractfr}
-\end{abstract}
+% \noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
+\selectlanguage{english}
 \pagebreak
+\input{theabstract}
+% \noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
+%Horizontal rule
+
+%English abstract:
+% \pagebreak
 % %German abstract:
 % \begin{abstract}[german]
 % \dummytext
 % \end{abstract}
 %Horizontal rule
-\noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
+% \noindent\hspace*{0.35\textwidth}\hrulefill\hspace*{0.35\textwidth}\\[-\bigskipamount]
 %########################################################################
 % Acknowledgments
 %########################################################################
@@ -97,10 +102,13 @@
 %Put the text vertically centered
 \input{mesremerciements}
 \newpage
+\raggedleft
+\emph{To Claire.}
 %########################################################################
 % Contents
 %########################################################################
 \strut\newpage
+\raggedright
 \microtypesetup{protrusion=false}
 \tableofcontents
 \listoffigures
