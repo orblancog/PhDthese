@@ -3,7 +3,7 @@ In this chapter I present the results of the studies in the vertical plane of th
 Finally the status of the BPM system is shown with remarks about the ongoing work to improve the current performance.\par
 \section{Calibration}\label{s:cals}
 The calibration factor is obtained per cavity and in the vertical plane $y$ by measuring the position signal change as a function of the physical displacement of the cavity. Two factors are used to obtain each calibration : the movers' displacement versus voltage setting $C_m$ [$\mu$m/V] and the cavity response versus voltage setting $C_c$ [a.u./V]. Therefore the cavity calibration factor is $C_{bpm}=C_c/C_m$ [a.u./$\mu$m].\par
-\subsection{Movers' Calibrations $C_m$}\label{s:calcm}
+\subsection{Movers' Calibrations \texorpdfstring{$C_m$}{Cm}}\label{s:calcm}
 Prior to installation, the movers' displacement versus voltage setting was measured per BPM block. An interferometer with better than 1 nm resolution was used to measure the BPM vertical position as shown in Fig.~\ref{f:interfero}. As the head is located on top of the BPM, positive displacement implies negative change in the intereferometer readout. Four cycles are shown in Fig. \ref{f:fourcycles}, two descending and two rising, covering the total dynamic range and divided in 100 steps, with a 3~s settling time between steps.\par
 \begin{figure}[!htb]
 \centering
@@ -27,7 +27,7 @@ Linearity was tested in the four cycles with feedback. Fig. \ref{f:Cedratmsteps}
  \includegraphics[angle=-90,scale=0.30]{image26e.pdf}\caption{Residual non-linearity (with fb), after substraction of linear fitting on cedrat movers.}\label{f:Cedratlinres}
 \end{subfigure}\caption{Block AB movers, linearity test over four cycles.}\label{f:Cedratfeedback}
 \end{figure}
-The calibration mean from these 4~cycles is $C_{mAB} = (-31.015\pm12)\mu$m/V. This value is valid for ranges were the residual is constant enough, therefore, it is recommended to use the movers with voltage settings in the middle of the total dynamic range and to scan over less than 1~V. Improved calibration over full the range can be obtained using a non-linear function.\par
+The calibration mean from these 4~cycles is $C_{mAB} = (-31.015\pm0.012)\mu$m/V. This value is valid for ranges were the residual is constant enough, therefore, it is recommended to use the movers with voltage settings in the middle of the total dynamic range and to scan over less than 1~V. Improved calibration over full the range can be obtained using a non-linear function.\par
 The step stability was tested by moving back and forth the voltage setting hundreds of times. Figure \ref{f:Cedratstepstab} shows that 10~nm steps are observable and Fig. \ref{f:Cedratstab} shows 1.1~nm of stability on each setting.\par
 \begin{figure}[!htb]
  \centering\hspace*{-0.6cm}
@@ -56,7 +56,7 @@ Linearity was tested in the four cycles with feedback. Figure \ref{f:PImsteps} s
  \includegraphics[angle=-90,scale=0.30]{image06e.pdf}\caption{Residual non-linearity (with fb), after substraction of linear fitting on PI movers.}\label{f:PIlinres}
 \end{subfigure}\caption{Block C movers, linearity test over four cycles.}\label{f:PIfeedback}
 \end{figure}
-The calibration mean from these 4 cycles is $C_{mC} = (30.002\pm7)\mu$m/V. This value is valid for ranges were the residual is constant enough, therefore, it is recommended to use the movers with voltage settings in the middle of the total dynamic range and/or scan over less than 1 V.\par
+The calibration mean from these 4 cycles is $C_{mC} = (30.002\pm0.007)\mu$m/V. This value is valid for ranges were the residual is constant enough, therefore, it is recommended to use the movers with voltage settings in the middle of the total dynamic range and/or scan over less than 1 V.\par
 The step stability was tested by moving back and forth the voltage setting hundreds of times. Fig. \ref{f:PIstepstab} shows that 20 nm steps can be resolved and Fig. \ref{f:PIstab} shows 1.13 nm of stability on each setting with feedback.\par
 \begin{figure}[!htb]
  \centering\hspace*{-0.6cm}
@@ -73,7 +73,7 @@ Coupling effect of horizontal displacement on the vertical plane was also tested
 \includegraphics[scale=0.32,angle=-90]{image42.pdf}\caption{Horizontal to vertical movers coupling.}\label{f:PIcoupling}
 \end{figure}
 In the same way as with previous block, only the readbacks from the control box are available after installation indicating current mover position. Results from readback linearity with respect to voltage setting within ranges below 1~V show that readbacks are limited by electrical noise of $5.3$~mV limiting the calibration steps. This however does not provide information of the movers stability because the feedback loop is closed inside the control box. The noise is Gaussian, and its effect on calibration can be minimized by averaging over several readings.\par
-\subsection{Cavity response calibration $C_c$}\label{s:calibration}
+\subsection{Cavity response calibration \texorpdfstring{$C_c$}{Cc}}\label{s:calibration}
 During beam time the cavity position is systematically changed and the amplitude of the cavity output signal is measured. Calibration is calculated from the movers voltage readbacks and choosing the signal peak from the acquired waveform,  giving the factor $C_c=I'/V$ [a.u./V], and the IQ rotation angle $\phi$.\par
 Input signal can be attenuated from 0 dB to 70 dB in order to keep it inside of the electronics linear response and acquisition system limits. The system response with attenuation change can be seen in Fig. \ref{f:calatt}. The variation of the calibration is within $\pm5\%$ for charge between $(0.4\sim0.5)\times10^{10}$ particles, except for IPBy at 0~dB. The reason for this is a saturation of the electronics, as explained in Section \ref{s:dynrange}.
 \begin{figure}[!htb]
